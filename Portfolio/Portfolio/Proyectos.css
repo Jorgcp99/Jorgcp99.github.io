@@ -1,0 +1,52 @@
+body{
+		margin-bottom:0px;
+		margin:0px;
+		background-color:#e6e6e6;
+		
+	}
+	#Menu{
+		display:flex;
+		padding-top:20px;
+		margin: auto;
+		display:flex;
+		
+		background-color:white;
+		height:50px;
+		justify-content:space-around;
+		}
+	
+	#Menu  a{
+		
+		text-decoration:none;
+		font:bold 16px Verdana;
+		padding:15px;
+		border-bottom: 2px solid transparent;
+		margin-left:20px;
+		color: #274855;
+		height:20px;
+	}
+	#Menu div{
+	
+		display:flex;
+		justify-content:space-around;
+		align-items:center;
+		padding :8px;
+	}
+	#Menu  a:hover{
+		border-bottom: 2px solid #cc0000;
+		color:#cc0000;
+	}
+	
+	#proyectos{
+		height:420px;
+	}
+	#top{
+		height:20%;
+		text-align:center;
+		font:20px Verdana;
+	}
+	#abajo{
+		height:80%;
+		font:16px Verdana;
+		text-align:center;
+	}

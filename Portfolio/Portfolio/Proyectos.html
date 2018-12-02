@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+ <title>SOBRE MI</title>
+ <link rel="stylesheet" href="Proyectos.css"/>
+ 
+ 
+ 
+</head>
+<body>
+
+	<nav id="Menu">
+
+			<div id="casa1">
+				<a href="index.html">
+				<img  src="imagenes/casa.png"  alt="inicio">
+				</a>
+			</div>
+			<div>
+				<a href="Sobre_mi.html">SOBRE MI</a>
+				<img src="imagenes/usuario.png" alt="Sobre mi">
+			</div>
+			<div>
+				<a href="Educacion.html">EDUCACIÓN</a>
+				<img src="imagenes/libros.png" alt="Educación">
+			</div>
+			<div>
+				<a href="Proyectos.html">PROYECTOS</a>
+				<img src="imagenes/ordenador.png" alt="Proyectos">
+			</div>
+
+	</nav>
+	
+	<div id="proyectos">
+		<div id="top">
+		PROYECTOS
+		</div>
+		<div id="abajo">
+		<p>En la actualidad debido a mi falta de experiencia no tengo muchos proyectos desarrollados. Aquí os dejo un proyecto de programación que consiste en el clásico juego de "Hundir la flota"
+		<div id="java">
+		
+		<pre style='text-align: left; border: 1px dashed #008DEF; line-height: 18px; padding: 15px; font-size: 13px; font-family:  Courier New , Courier, monospace; overflow: auto;'><span style='font-weight:bold;color:#7B0052;'>import</span> java.util.*;
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> ProyectoFinal <span style='font-weight:bold;color:#D3171B'>{</span>
+
+	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String T[][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [5][5];
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String T2[][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [5][5];	
+	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaAgua = <span style='color:#2A00FF'>"~"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaTocado = <span style='color:#2A00FF'>"*"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaHundido = <span style='color:#2A00FF'>"#"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaVacia = <span style='color:#2A00FF'>" "</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaH3 = <span style='color:#2A00FF'>"H3"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaV3 = <span style='color:#2A00FF'>"V3"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaH2 = <span style='color:#2A00FF'>"H2"</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaV2 = <span style='color:#2A00FF'>"V2"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaCH3 = <span style='color:#2A00FF'>"CH3"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaCV3 = <span style='color:#2A00FF'>"CV3"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaCH2 = <span style='color:#2A00FF'>"CH2"</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String fichaCV2 = <span style='color:#2A00FF'>"CV2"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String modoDeJuego;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String jugarOtraVez;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String respuestaTablero;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String respuestaFichas;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String deAcuerdo;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String preguntarDosJugadores;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String letrasColumna [] = <span style='font-weight:bold;color:#D3171B'>{</span><span style='color:#2A00FF'>"A"</span>, <span style='color:#2A00FF'>"B"</span>, <span style='color:#2A00FF'>"C"</span>, <span style='color:#2A00FF'>"D"</span>, <span style='color:#2A00FF'>"E"</span>, <span style='color:#2A00FF'>"F"</span>, <span style='color:#2A00FF'>"G"</span>, <span style='color:#2A00FF'>"H"</span>, <span style='color:#2A00FF'>"I"</span>, <span style='color:#2A00FF'>"J"</span><span style='font-weight:bold;color:#D3171B'>}</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> String jugador1, jugador2;
+    
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> fila=0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> columna=0;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> fila2=1;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> columna2=1;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> limite = 0;
+	     	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> disparosRealizados = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosHundidos = 0;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosHundidosJ1 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosHundidosJ2 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> partidasJugadas = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> numH3 = 3;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> numV3 = 3;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> numH2 = 2;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> numV2 = 2;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> contador = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosH2 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosH3 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosV3 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosV2 = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> vecesPreguntado = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> barcosTotales = 0;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> casillasOcupadas = 0; 
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>int</span> reinicio = 0;
+	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> condicion = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> basico = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> avanzado = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> casillaOcupada = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> respuestaIncorrecta = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> jugarBasico = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> jugarAvanzado = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> filaInvalida = <span style='font-weight:bold;color:#7B0052;'>false</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> columnaInvalida = <span style='font-weight:bold;color:#7B0052;'>false</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntar = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarTamaño = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarFichas = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> fichas1 = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarAgua = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarTocado = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarHundido = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarBarcos = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarH3 = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarV3 = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarH2 = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntarV2 = <span style='font-weight:bold;color:#7B0052;'>true</span>;	
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> preguntar8 = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> modoDosJugadores;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> correcto = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> mensajeIntro = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+	<span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>boolean</span> jugarOtra=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+			
+ 
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> tablero (String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+			
+		<span style='font-weight:bold;color:#7B0052;'>int</span> filas = 0; 
+		<span style='font-weight:bold;color:#7B0052;'>int</span> columnas = 0;	
+				
+		System.out.print(<span style='color:#2A00FF'>"    "</span>);		
+		String letras [] = <span style='font-weight:bold;color:#D3171B'>{</span><span style='color:#2A00FF'>"A"</span>, <span style='color:#2A00FF'>"B"</span>, <span style='color:#2A00FF'>"C"</span>, <span style='color:#2A00FF'>"D"</span>, <span style='color:#2A00FF'>"E"</span>, <span style='color:#2A00FF'>"F"</span>, <span style='color:#2A00FF'>"G"</span>, <span style='color:#2A00FF'>"H"</span>, <span style='color:#2A00FF'>"I"</span>, <span style='color:#2A00FF'>"J"</span><span style='font-weight:bold;color:#D3171B'>}</span>;
+		
+		<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>						
+			System.out.print(letras[i] + <span style='color:#2A00FF'>" "</span>);								
+		<span style='font-weight:bold;color:#D3171B'>}</span>		
+		
+		System.out.println(<span style='color:#2A00FF'>" "</span>);				
+		
+		<span style='font-weight:bold;color:#7B0052;'>for</span> (filas=0; filas&lt;tamaño; filas++) <span style='font-weight:bold;color:#D3171B'>{</span>												
+			<span style='font-weight:bold;color:#7B0052;'>for</span>(columnas=0; columnas&lt;tamaño; columnas++) <span style='font-weight:bold;color:#D3171B'>{</span>								 
+				<span style='font-weight:bold;color:#7B0052;'>if</span> ((columnas==0)==<span style='font-weight:bold;color:#7B0052;'>true</span> && (filas==9)==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>			    											
+					System.out.print(filas+1 + <span style='color:#2A00FF'>" "</span>); 			    			     				 				 				 
+				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (columnas==0) <span style='font-weight:bold;color:#D3171B'>{</span>					 					 
+					System.out.print(filas+1 + <span style='color:#2A00FF'>"  "</span>);				 
+				<span style='font-weight:bold;color:#D3171B'>}</span>			     				 
+				System.out.print(<span style='color:#2A00FF'>"|"</span>+t[filas][columnas]);		
+			<span style='font-weight:bold;color:#D3171B'>}</span>		    			
+			System.out.println(<span style='color:#2A00FF'>"|"</span>);				
+		<span style='font-weight:bold;color:#D3171B'>}</span>    	    
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+          
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> limpiarTablero(String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+		
+		<span style='font-weight:bold;color:#7B0052;'>int</span> filas, columnas;		
+		<span style='font-weight:bold;color:#7B0052;'>for</span> (filas=0; filas&lt;tamaño; filas++) <span style='font-weight:bold;color:#D3171B'>{</span>						
+			<span style='font-weight:bold;color:#7B0052;'>for</span>(columnas=0; columnas&lt;tamaño; columnas++) <span style='font-weight:bold;color:#D3171B'>{</span>								
+				t[filas][columnas]= fichaVacia;			
+			<span style='font-weight:bold;color:#D3171B'>}</span>		
+		<span style='font-weight:bold;color:#D3171B'>}</span>			
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+       
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> crearBarcoHor3 (String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+    	  	
+    	<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	   	    		
+    		fila = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño)+1);     	    	
+    		columna = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño-2)+1);     	     	 
+	   	  	 	  	   		
+    		<span style='font-weight:bold;color:#7B0052;'>if</span> ((t[(fila-1)][(columna-1)] != fichaVacia) || (t[(fila-1)][(columna)] != fichaVacia) || (t[(fila-1)][(columna+1)] != fichaVacia)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    	       		      	  		   			
+    			condicion=<span style='font-weight:bold;color:#7B0052;'>true</span>;			                    	  		  	  		
+    		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	  	        	  		    	  		 	  			  		    			
+    			<span style='font-weight:bold;color:#7B0052;'>for</span>(<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;3; i++) <span style='font-weight:bold;color:#D3171B'>{</span>  		      	     	      		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (i==0) <span style='font-weight:bold;color:#D3171B'>{</span>    				    	      			
+    					t[(fila-1)][(columna-1)+i]=fichaCH3;
+    	      		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	      		
+    	      			t[(fila-1)][(columna-1)+i]=fichaH3;	
+    	      		<span style='font-weight:bold;color:#D3171B'>}</span>
+    	      	<span style='font-weight:bold;color:#D3171B'>}</span> 	       	  	   	  		
+    			condicion=<span style='font-weight:bold;color:#7B0052;'>false</span>; 	  	    		
+    		<span style='font-weight:bold;color:#D3171B'>}</span>    
+    	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (condicion==<span style='font-weight:bold;color:#7B0052;'>true</span>);
+    <span style='font-weight:bold;color:#D3171B'>}</span>  	
+    
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> crearBarcoVer3 (String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+    	
+    	<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+  		  
+    	    fila = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño-2)+1);  
+    	  	columna = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño)+1);
+	   	  	
+    	  	<span style='font-weight:bold;color:#7B0052;'>if</span> ((t[(fila-1)][(columna-1)] != fichaVacia) || (t[(fila)][(columna-1)] != fichaVacia) || (t[(fila)+1][(columna-1)] != fichaVacia)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    	       		      
+    	  		condicion=<span style='font-weight:bold;color:#7B0052;'>true</span>;			                       	  	
+    	  	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	  	        	  		    	  		    	  		
+    	  		<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;3; i++) <span style='font-weight:bold;color:#D3171B'>{</span>    			  	
+    	    	   <span style='font-weight:bold;color:#7B0052;'>if</span> (i==0) <span style='font-weight:bold;color:#D3171B'>{</span>    	  			
+    	    		   t[(fila-1)+i][(columna-1)]=fichaCV3;
+    	    	   <span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    	    		   t[(fila-1)+i][(columna-1)]=fichaV3; 
+    	    	   <span style='font-weight:bold;color:#D3171B'>}</span>    	    
+    	    	<span style='font-weight:bold;color:#D3171B'>}</span>	       	     	  	
+    	  		condicion=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    	  	<span style='font-weight:bold;color:#D3171B'>}</span>    	  		   	
+    	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (condicion==<span style='font-weight:bold;color:#7B0052;'>true</span>);   	
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> crearBarcoHor2 (String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+    	 	
+    	<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+  	  	  
+            fila = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño)+1);  
+          	columna = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño-1)+1);
+          	 	
+          	<span style='font-weight:bold;color:#7B0052;'>if</span> ((t[(fila-1)][(columna-1)] != fichaVacia) || (t[(fila-1)][(columna)] != fichaVacia)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    	          	      
+          		condicion=<span style='font-weight:bold;color:#7B0052;'>true</span>;			                            	          	
+          	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>          	              		          		
+          		<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;2; i++) <span style='font-weight:bold;color:#D3171B'>{</span>       		  	
+            	   <span style='font-weight:bold;color:#7B0052;'>if</span> (i==0) <span style='font-weight:bold;color:#D3171B'>{</span>          			
+            		   t[(fila-1)][(columna-1)+i]=fichaCH2;
+            	   <span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+            		   t[(fila-1)][(columna-1)+i]=fichaH2; 
+            	   <span style='font-weight:bold;color:#D3171B'>}</span>
+                <span style='font-weight:bold;color:#D3171B'>}</span>
+          		condicion=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+          	<span style='font-weight:bold;color:#D3171B'>}</span>          		            
+    	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (condicion==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> crearBarcoVer2 (String t[][], <span style='font-weight:bold;color:#7B0052;'>int</span> tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+		
+    	<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+        	  
+            fila = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño-1)+1);  
+          	columna = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.floor(Math.random()*(tamaño)+1);
+          	 	
+          	<span style='font-weight:bold;color:#7B0052;'>if</span> ((t[(fila-1)][(columna-1)] != fichaVacia) || (t[(fila)][(columna-1)] != fichaVacia)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    	           	      
+          		condicion=<span style='font-weight:bold;color:#7B0052;'>true</span>;			                            	
+          	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>         	              		         		
+          		<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;2; i++) <span style='font-weight:bold;color:#D3171B'>{</span>        		  	
+            	   <span style='font-weight:bold;color:#7B0052;'>if</span> (i==0) <span style='font-weight:bold;color:#D3171B'>{</span>
+            		   t[(fila-1)+i][(columna-1)]=fichaCV2;  
+            	   <span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+            		   t[(fila-1)+i][(columna-1)]=fichaV2; 
+            	   <span style='font-weight:bold;color:#D3171B'>}</span>          			      	 
+          		<span style='font-weight:bold;color:#D3171B'>}</span>	       	 
+          		condicion=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+          	<span style='font-weight:bold;color:#D3171B'>}</span>         		        
+    	<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (condicion==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+   
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> mensajeIntroduccion() <span style='font-weight:bold;color:#D3171B'>{</span>
+    	
+    	Scanner entrada = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner (System.in);
+    	
+    	System.out.println(<span style='color:#2A00FF'>"\t\t\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"</span>);
+    	System.out.println(<span style='color:#2A00FF'>"\t\t\t$                              $"</span>);
+    	System.out.println(<span style='color:#2A00FF'>"\t\t\t$       Hundir la Flota        $"</span>);   	
+    	System.out.println(<span style='color:#2A00FF'>"\t\t\t$                              $"</span>);
+    	System.out.println(<span style='color:#2A00FF'>"\t\t\t$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"</span>);    	
+    	System.out.println(<span style='color:#2A00FF'>"\n· Bienvenid@ a \"Hundir la Flota\". El objetivo del juego es hundir todos los barcos ocultos."</span>);
+    	System.out.println(<span style='color:#2A00FF'>"\n &gt;&gt;--------------------------------------------------------------------------------------&lt;&lt;"</span>);
+    	System.out.println(<span style='color:#2A00FF'>"\n· Como jugar: Introducir las coordenadas del disparo, eligiendo primero la fila y después la columna."</span>);
+        System.out.println(<span style='color:#2A00FF'>"· Si la coordenada es incorrecta o la casilla ya esta ocupada se volveran a pedir las coordenadas."</span>);
+  	    System.out.println(<span style='color:#2A00FF'>"· Podrá volver a jugar las veces que desee (en modo básico o en modo avanzado).\n"</span>); 
+    	System.out.println(<span style='color:#2A00FF'>"\n &gt;&gt;--------------------------------------------------------------------------------------&lt;&lt;"</span>);   	
+		System.out.println(<span style='color:#2A00FF'>"\n· El juego consta de dos modos:"</span>);	       		
+		System.out.println(<span style='color:#2A00FF'>"\n &gt; Básico: Modo para un jugador. Tablero de 5x5 casillas, con 4 barcos: uno horizontal de 3 casillas, uno vertical de 3 casillas, uno horizontal de 2 casillas y uno vertical de 2 casillas."</span>);	        		
+		System.out.println(<span style='color:#2A00FF'>"\n &gt; Avanzado: Cuenta con las siguientes posibilidades: \n"</span>	    		 	    		    				
+				+ <span style='color:#2A00FF'>"\n    1. Elección el tamaño del tablero (entre 5x5 y 10x10 casillas, ambos inclusive)."</span>	    		     				
+				+ <span style='color:#2A00FF'>"\n    2. Elección de los símbolos para el efecto de cada disparo (agua, tocado o hundido)."</span>	    		 			
+				+ <span style='color:#2A00FF'>"\n    3. Elección de la cantidad y tamaño de los barcos creados."</span>                		
+				+ <span style='color:#2A00FF'>"\n    4. Modo para dos jugadores, alternando tableros. (opcional)."</span>);	    	     	   		        	
+		
+		<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>				    		    	
+    		System.out.println(<span style='color:#2A00FF'>"\n· Por favor, introduzca 'basico' o 'avanzado' en función del modo en el que desee jugar:"</span>);
+			System.out.println(<span style='color:#2A00FF'>" "</span>);						
+			modoDeJuego = entrada.nextLine();
+									
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (modoDeJuego.equalsIgnoreCase(<span style='color:#2A00FF'>"basico"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>				
+				basico=<span style='font-weight:bold;color:#7B0052;'>true</span>;		 
+			    <span style='font-weight:bold;color:#7B0052;'>break</span>;
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (modoDeJuego.equalsIgnoreCase(<span style='color:#2A00FF'>"avanzado"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+				avanzado=<span style='font-weight:bold;color:#7B0052;'>true</span>;		    
+			    <span style='font-weight:bold;color:#7B0052;'>break</span>;
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+				System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta."</span>);
+			    respuestaIncorrecta=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+			<span style='font-weight:bold;color:#D3171B'>}</span>			    
+	    <span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);
+    	
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> iniciarJuegoBasico() <span style='font-weight:bold;color:#D3171B'>{</span>
+								
+    	jugarBasico=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    	limpiarTablero(T,5);
+		limpiarTablero(T2,5);	
+	    crearBarcoHor3(T,5);     	
+		crearBarcoVer3(T,5);
+	    crearBarcoHor2(T,5);
+		crearBarcoVer2(T,5);
+		numH3 = 3;
+		numV3 = 3;
+		numH2 = 2;
+		numV2 = 2;	
+		disparosRealizados=0;			 
+		barcosHundidos=0;	
+		
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+    	
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> iniciarJuegoAvanzado() <span style='font-weight:bold;color:#D3171B'>{</span>
+    	    		
+    	jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>true</span>;  		  	 
+    	disparosRealizados=0;			 
+    	barcosHundidos=0;
+    	barcosHundidosJ1=0;
+    	barcosHundidosJ2=0;
+    	partidasJugadas++; 
+    	preguntarFichas=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		fichas1=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		preguntarH3=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		preguntarV3=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		preguntarH2=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+	    preguntarV2=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+		   	    		     	    			 	    	    	    			    		    	    		   				  	
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> modoBasico() <span style='font-weight:bold;color:#D3171B'>{</span>
+		
+		Scanner entrada = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner (System.in);
+		
+		<span style='font-weight:bold;color:#7B0052;'>if</span> ((partidasJugadas==0)==<span style='font-weight:bold;color:#7B0052;'>true</span> && (basico==<span style='font-weight:bold;color:#7B0052;'>true</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>		     
+			System.out.println(<span style='color:#2A00FF'>"\n*************** MODO BÁSICO ***************"</span>);       	  
+			System.out.println(<span style='color:#2A00FF'>"\n· Bienvenid@ al modo básico. Jugará con en un tablero de 5x5 casillas donde hay ocultos 4 barcos: "</span>  	  		  			  
+					+ <span style='color:#2A00FF'>"uno horizontal de 3 casillas, uno vertical de 3 casillas, uno horizontal de 2 casillas y uno vertical de 2 casillas. "</span>  	  		
+					+ <span style='color:#2A00FF'>"La partida acabará cuando consigua hundir los 4.\n"</span>);                        
+			iniciarJuegoBasico();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	        								
+		<span style='font-weight:bold;color:#7B0052;'>while</span> (jugarBasico==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>		  	    
+					 	    	    	   	    	  						
+			tablero(T2,5);	
+	  	  
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T2[fila-1][columna-1] == fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>		  		  
+				System.out.println(<span style='color:#2A00FF'>"\n    ¡Tocado!"</span>);		  	  
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T2[fila-1][columna-1] == fichaHundido) <span style='font-weight:bold;color:#D3171B'>{</span>		  		  
+				System.out.println(<span style='color:#2A00FF'>"\n    ¡Hundido!"</span>);	   	  
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T2[fila-1][columna-1] == fichaAgua) <span style='font-weight:bold;color:#D3171B'>{</span>		  		  
+				System.out.println(<span style='color:#2A00FF'>"\n     Agua..."</span>);	  
+			<span style='font-weight:bold;color:#D3171B'>}</span>	  
+	  
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (disparosRealizados&gt;=1) <span style='font-weight:bold;color:#D3171B'>{</span>	  	  
+				System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);	 
+				System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidos);	  	  
+			<span style='font-weight:bold;color:#D3171B'>}</span>	  
+	  
+			System.out.println(<span style='color:#2A00FF'>"\n· Introduzca las coordenadas del disparo:"</span>);  	         
+	 
+			<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	  		      
+				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>					  	      
+					System.out.print(<span style='color:#2A00FF'>"\n&gt; Fila = "</span>);	  	      
+					fila=entrada.nextInt();  							  
+					<span style='font-weight:bold;color:#7B0052;'>if</span> ((fila==1)==<span style='font-weight:bold;color:#7B0052;'>true</span> || (fila==2)==<span style='font-weight:bold;color:#7B0052;'>true</span> || (fila==3)==<span style='font-weight:bold;color:#7B0052;'>true</span> || (fila==4)==<span style='font-weight:bold;color:#7B0052;'>true</span> || (fila==5)==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>									  			  				  
+						<span style='font-weight:bold;color:#7B0052;'>break</span>;				  			  			  
+					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>				
+						System.out.println(<span style='color:#2A00FF'>"\n· Fila inválida.\n"</span>);				
+						tablero(T2,5); 				
+						System.out.println(<span style='color:#2A00FF'>" "</span>);										
+						filaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;			  					
+					<span style='font-weight:bold;color:#D3171B'>}</span>					      
+				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (filaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);	   	    	          				
+				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>				          
+					System.out.print(<span style='color:#2A00FF'>"&gt; Columna = "</span>);	  	          		      
+					String columnaStr = entrada.next();			      
+					System.out.println(<span style='color:#2A00FF'>" "</span>);		      
+					String columnasValidas[] = <span style='font-weight:bold;color:#7B0052;'>new</span> String[] <span style='font-weight:bold;color:#D3171B'>{</span><span style='color:#2A00FF'>"A"</span>, <span style='color:#2A00FF'>"B"</span>, <span style='color:#2A00FF'>"C"</span>, <span style='color:#2A00FF'>"D"</span>, <span style='color:#2A00FF'>"E"</span><span style='font-weight:bold;color:#D3171B'>}</span>;		      		      		      
+					<span style='font-weight:bold;color:#7B0052;'>if</span> (Arrays.asList(columnasValidas).contains(columnaStr)) <span style='font-weight:bold;color:#D3171B'>{</span>		    	  		    	  		    		  		    		
+						columna = (Arrays.asList(columnasValidas).indexOf(columnaStr)) + 1;		    		  	    	  		    			    	  		      		           
+						<span style='font-weight:bold;color:#7B0052;'>break</span>;		      					
+					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>					
+						System.out.println(<span style='color:#2A00FF'>"\n· Columna inválida.\n"</span>);				
+						tablero(T2,5); 				
+						System.out.println(<span style='color:#2A00FF'>" "</span>);				
+						columnaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;		  
+					<span style='font-weight:bold;color:#D3171B'>}</span>		      	      		    		      
+				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (columnaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);	    	              	          
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (T2[fila-1][columna-1]!=fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>			   			     
+					System.out.print(<span style='color:#2A00FF'>"\n· Casilla ocupada.\n"</span>);				  			     
+					System.out.println(<span style='color:#2A00FF'>" "</span>);			     
+					tablero(T2,5); 		     
+					casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>;	          	          
+				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	        	
+					disparosRealizados++;	        	 
+					<span style='font-weight:bold;color:#7B0052;'>break</span>;	          
+				<span style='font-weight:bold;color:#D3171B'>}</span>	           	          	    	     			
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>);
+	    	     	     
+	      
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]!=fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>		  		      
+				T2[fila-1][columna-1]=fichaTocado;			  	      	      		
+			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]==fichaVacia)<span style='font-weight:bold;color:#D3171B'>{</span>		  		      
+				T2[fila-1][columna-1]=fichaAgua;	      	      
+			<span style='font-weight:bold;color:#D3171B'>}</span>	     
+	      
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]==fichaH3 || T[fila-1][columna-1]==fichaCH3 ) <span style='font-weight:bold;color:#D3171B'>{</span>    	 	    	    	  
+				numH3--;	    	 	    	  
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (numH3==0) <span style='font-weight:bold;color:#D3171B'>{</span>	    		 	    		
+					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;5; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    		 
+						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> j = 0; j&lt;5; j++)	    		   
+							<span style='font-weight:bold;color:#7B0052;'>if</span> (T[i][j]==fichaH3 || T[i][j]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>   		    		    		    	
+								T2[i][j]=fichaHundido;	    		    
+							<span style='font-weight:bold;color:#D3171B'>}</span>   		 	    	     
+					<span style='font-weight:bold;color:#D3171B'>}</span>       	  	            
+					barcosHundidos++; 	    	 
+				<span style='font-weight:bold;color:#D3171B'>}</span>	      
+			<span style='font-weight:bold;color:#D3171B'>}</span>
+	      	      
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]==fichaH2 || T[fila-1][columna-1]==fichaCH2) <span style='font-weight:bold;color:#D3171B'>{</span>    	 	    	    	     	  
+				numH2--;	     	 	     	  
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (numH2==0) <span style='font-weight:bold;color:#D3171B'>{</span>	     		      		
+					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;5; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	     		  
+						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> j = 0; j&lt;5; j++)	     		    							
+							<span style='font-weight:bold;color:#7B0052;'>if</span> (T[i][j]==fichaH2 || T[i][j]==fichaCH2 ) <span style='font-weight:bold;color:#D3171B'>{</span>   		    		     		    	
+								T2[i][j]=fichaHundido;	     		    
+							<span style='font-weight:bold;color:#D3171B'>}</span>   		 	     	    
+					<span style='font-weight:bold;color:#D3171B'>}</span>       	  	          
+					barcosHundidos++;  	     	 
+				<span style='font-weight:bold;color:#D3171B'>}</span>      
+			<span style='font-weight:bold;color:#D3171B'>}</span>	      
+	      
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]==fichaV3 || T[fila-1][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>    	 	    	    	     	
+				numV3--;	     	 	     	
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (numV3==0) <span style='font-weight:bold;color:#D3171B'>{</span>     		 	     	
+					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;5; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	     		  
+						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> j = 0; j&lt;5; j++)	     		    
+							<span style='font-weight:bold;color:#7B0052;'>if</span> (T[i][j]==fichaV3 || T[i][j]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>   		    		     		    									
+								T2[i][j]=fichaHundido;	     		    
+							<span style='font-weight:bold;color:#D3171B'>}</span>   		 	     	     
+					<span style='font-weight:bold;color:#D3171B'>}</span>       	  	          
+					barcosHundidos++;  	     	 
+				<span style='font-weight:bold;color:#D3171B'>}</span>	        
+			<span style='font-weight:bold;color:#D3171B'>}</span>	      
+	     
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (T[fila-1][columna-1]==fichaV2 || T[fila-1][columna-1]==fichaCV2) <span style='font-weight:bold;color:#D3171B'>{</span>    	 	    	    	     	 
+				numV2--;	     	      	 
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (numV2==0) <span style='font-weight:bold;color:#D3171B'>{</span>	     		 	     		
+					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;5; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	     		  
+						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> j = 0; j&lt;5; j++)	     		    
+							<span style='font-weight:bold;color:#7B0052;'>if</span> (T[i][j]==fichaV2 || T[i][j]==fichaCV2) <span style='font-weight:bold;color:#D3171B'>{</span>   		    		     		    	
+								T2[i][j]=fichaHundido;	     		    
+							<span style='font-weight:bold;color:#D3171B'>}</span>   		 	     	     
+					<span style='font-weight:bold;color:#D3171B'>}</span>       	  	          
+					barcosHundidos++;  	     	 
+				<span style='font-weight:bold;color:#D3171B'>}</span>	        
+			<span style='font-weight:bold;color:#D3171B'>}</span>	  
+	  			
+			<span style='font-weight:bold;color:#7B0052;'>if</span> (barcosHundidos==4) <span style='font-weight:bold;color:#D3171B'>{</span>		  	   		  
+				partidasJugadas++;
+				tablero(T2,5);		  		  		  
+				System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);		  
+				System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidos);		  		 
+				System.out.println(<span style='color:#2A00FF'>"\n· Partida finalizada. ¡Los 4 barcos han sido hundidos!"</span>);		  
+				System.out.println(<span style='color:#2A00FF'>"· Hasta ahora lleva "</span> + partidasJugadas + <span style='color:#2A00FF'>" partida(s) jugada(s)."</span>);		  		 		  		  
+				System.out.println(<span style='color:#2A00FF'>"\n· Puede seguir jugando si lo desea. Elija una de las opciones a continuación, por favor. "</span>);		 		 
+				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>		  		  
+					System.out.println(<span style='color:#2A00FF'>"\n 1. Empezar otra partida en Modo Básico."</span>);		  
+					System.out.println(<span style='color:#2A00FF'>" 2. Empezar otra partida en Modo Avanzado."</span>);	  					
+					System.out.println(<span style='color:#2A00FF'>" 3. Salir."</span>);		  
+					System.out.print(<span style='color:#2A00FF'>"\n&gt;"</span>);		  	  
+					jugarOtraVez = entrada.next();		  		 
+					<span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"1"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>			  					  
+						System.out.println(<span style='color:#2A00FF'>" "</span>);			  									  			  			  
+						respuestaIncorrecta = <span style='font-weight:bold;color:#7B0052;'>false</span>;			  
+						iniciarJuegoBasico();	
+						System.out.println(<span style='color:#2A00FF'>"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; NUEVA PARTIDA EN MODO BÁSICO &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;\n"</span>);
+					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"2"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>		  			  
+						System.out.println(<span style='color:#2A00FF'>" "</span>);			  
+						jugarBasico=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+						basico=<span style='font-weight:bold;color:#7B0052;'>false</span>;			  
+						avanzado=<span style='font-weight:bold;color:#7B0052;'>true</span>;			  
+						<span style='font-weight:bold;color:#7B0052;'>break</span>;			  	  
+					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"3"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>			  			  						   
+						System.out.println(<span style='color:#2A00FF'>"\n · Gracias por jugar a \"Hundir la Flota\"."</span>);							
+						System.exit(0);							  		  
+					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	  			
+						System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta"</span>);						
+						respuestaIncorrecta=<span style='font-weight:bold;color:#7B0052;'>true</span>;		  
+					<span style='font-weight:bold;color:#D3171B'>}</span>	  		  
+				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span>(respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);	  	   
+			<span style='font-weight:bold;color:#D3171B'>}</span>	    	  	  
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+    
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> modoAvanzado() <span style='font-weight:bold;color:#D3171B'>{</span>
+    	   	   	
+    	Scanner entrada = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner (System.in);
+    	   	
+    	<span style='font-weight:bold;color:#7B0052;'>while</span> (avanzado==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>   		        	   		
+    		   		
+    		<span style='font-weight:bold;color:#7B0052;'>if</span> (partidasJugadas==0) <span style='font-weight:bold;color:#D3171B'>{</span>   		
+    			System.out.println(<span style='color:#2A00FF'>"\n*************** MODO AVANZADO ***************"</span>);   	      				    		
+    		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (partidasJugadas&gt;0) <span style='font-weight:bold;color:#D3171B'>{</span>    		
+    			System.out.println(<span style='color:#2A00FF'>"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; NUEVA PARTIDA EN MODO AVANZADO &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;"</span>);	
+    		<span style='font-weight:bold;color:#D3171B'>}</span>
+    		
+    		<span style='color:#3F7F5F'>//1. ELECCION DE TABLERO   					      
+</span>    	      
+    		<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	       	    	
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> (mensajeIntro==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	    	      	    	
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> ((vecesPreguntado==0) && (partidasJugadas==0)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		   	    	     
+    					System.out.println(<span style='color:#2A00FF'>"\n· Bienvenid@ al modo avanzado. ¿Desea elegir el tamaño del tablero? (por defecto, el tablero es de 5x5 casillas).\n"</span>);	        	  		     
+    					respuestaTablero=entrada.next();  	  		     
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    	   	    	
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (vecesPreguntado&gt;0 || partidasJugadas&gt;0) <span style='font-weight:bold;color:#D3171B'>{</span>   	    	   	    		
+    					System.out.println(<span style='color:#2A00FF'>"\n · ¿Desea elegir el tamaño del tablero? (por defecto, el tablero es de 5x5 casillas).\n"</span>);	    		  	    		
+    					respuestaTablero=entrada.next();   	    		
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;	    		    	    	
+    				<span style='font-weight:bold;color:#D3171B'>}</span>	    	    	       
+    			<span style='font-weight:bold;color:#D3171B'>}</span>    	    	      	    	
+    			<span style='font-weight:bold;color:#7B0052;'>if</span> (respuestaTablero.equalsIgnoreCase(<span style='color:#2A00FF'>"si"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>    	    	  	    	      	    		     				  	    		  
+    				<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarTamaño=<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>   				
+    					System.out.println(<span style='color:#2A00FF'>"\n· Por favor, elija a continuación el tamaño del tablero. Introduzca un número de 5 a 10 (ambos inclusive) para jugar en un tablero de N x N casillas (siendo N el numero introducido).\n"</span>);  	    	         				
+    					tamaño=entrada.nextInt();  	    	      	    	            				
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (((tamaño==5)==<span style='font-weight:bold;color:#7B0052;'>true</span>) || ((tamaño==6)==<span style='font-weight:bold;color:#7B0052;'>true</span>) || ((tamaño==7)==<span style='font-weight:bold;color:#7B0052;'>true</span>) || ((tamaño==8)==<span style='font-weight:bold;color:#7B0052;'>true</span>) || ((tamaño==9)==<span style='font-weight:bold;color:#7B0052;'>true</span>) || ((tamaño==10)==<span style='font-weight:bold;color:#7B0052;'>true</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    	    		                					
+    						String T3 [][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];  		    	             					
+    						String T5 [][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];
+    						limpiarTablero(T3,tamaño);	    	  		    	                      		    	                					
+    						limpiarTablero(T5,tamaño);
+    						System.out.println(<span style='color:#2A00FF'>"\n· Jugará en el tablero de "</span> + (tamaño) + <span style='color:#2A00FF'>"x"</span> + (tamaño) + <span style='color:#2A00FF'>" casillas."</span>);		    	                     		    	                					
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;	    		     	    	             				
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    	    	    		             
+    						System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta."</span>);   		    	                 					  	    	              					   				    				
+    					<span style='font-weight:bold;color:#D3171B'>}</span>     			   				
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   				
+    				<span style='font-weight:bold;color:#7B0052;'>break</span>;
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (respuestaTablero.equalsIgnoreCase(<span style='color:#2A00FF'>"no"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    	  	    	                     	  	                       	                 				 	    	      
+    				tamaño=5;
+    				String T3[][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];	    	     	    	      
+    				limpiarTablero(T3,5);	    	  	    	        	    	      
+    				String T5 [][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];
+    				limpiarTablero(T5,5);
+    				System.out.println(<span style='color:#2A00FF'>"\n· Jugará en el tablero por defecto de 5x5 casillas."</span>);	    	         	    	      
+    				<span style='font-weight:bold;color:#7B0052;'>break</span>;	          	         
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    	     	                  				          	              
+    				System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta. Escriba \"si\" o \"no\", por favor."</span>);   	    	         					    	                    	         
+    				respuestaIncorrecta=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    			<span style='font-weight:bold;color:#D3171B'>}</span>	     	         	      	        	          		    
+    			vecesPreguntado++;
+    		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);   	      
+    	          		
+    		<span style='color:#3F7F5F'>//2. Se permitirá personalizar el símbolo utilizado para el efecto de cada disparo, agua, tocado y hundido
+</span>    	      	      	          	      
+    		<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarFichas==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	          	         			   			
+    			<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    		  	       	    	     		   
+    				<span style='font-weight:bold;color:#7B0052;'>while</span> (fichas1==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>   		    	     		    	
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (vecesPreguntado==0) <span style='font-weight:bold;color:#D3171B'>{</span>   		    		    		    	
+    						System.out.println(<span style='color:#2A00FF'>"\n· Puede personalizar el carácter usado para mostrar el efecto de cada disparo."</span>);	       	    		
+    						System.out.println(<span style='color:#2A00FF'>"· Por defecto, los efectos de \"agua\", \"tocado\" y \"hundido\" son, respectivamente '~', '*' y '#'. ¿Desea modificar estos valores?\n"</span>);	    		   		    	
+    						respuestaFichas=entrada.next(); 		  		
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;    		    	   		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (vecesPreguntado&gt;0) <span style='font-weight:bold;color:#D3171B'>{</span>   		    	   		    		
+    						System.out.println(<span style='color:#2A00FF'>"\n· Por defecto, los efectos de \"agua\", \"tocado\" y \"hundido\" son, respectivamente '~', '*' y '#'. ¿Desea modificar estos valores?\n"</span>);	    		    		    		
+    						respuestaFichas = entrada.next();   		    		
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;	    		  		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    	  		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>     		        		    
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (respuestaFichas.equalsIgnoreCase(<span style='color:#2A00FF'>"si"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>    		  		            					    					    					
+    					<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarAgua==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>	      	         	    	  	      	    	      	                 
+    						System.out.println(<span style='color:#2A00FF'>"\n· Elija un caracter para representar la ficha \"agua\":\n"</span>);   	               
+    						fichaAgua = entrada.next();    	               	                     
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (fichaAgua.matches(<span style='color:#2A00FF'>".?"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  	    		    	    		    	    	    	                    
+    							preguntarAgua=<span style='font-weight:bold;color:#7B0052;'>false</span>;    	                       							    	    	                        
+    							<span style='font-weight:bold;color:#7B0052;'>break</span>;    							    	                     
+    						<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    	     	    	                    
+    							System.out.println(<span style='color:#2A00FF'>"\n· Ficha no disponible. Por favor, elija otro caracter."</span>);   	    	                       								    	    	                     
+    						<span style='font-weight:bold;color:#D3171B'>}</span>	      	      	      	      	                		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    		             		            					
+    					<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarTocado==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>   	         	                 
+    						System.out.println(<span style='color:#2A00FF'>"\n· Elija un carácter para representar la ficha \"tocado\":\n"</span>);   	                 
+    						fichaTocado = entrada.next();	        	         	                       
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (fichaTocado.matches(<span style='color:#2A00FF'>".?"</span>) != fichaTocado.matches(fichaAgua)) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  	    		    	     	    	    	    	                
+    							preguntarTocado=<span style='font-weight:bold;color:#7B0052;'>false</span>;    	    	                         							  	                     
+    							<span style='font-weight:bold;color:#7B0052;'>break</span>;	    	    	                       
+    						<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    	     	    	                     
+    							System.out.println(<span style='color:#2A00FF'>"\n· Ficha no disponible. Por favor, elija otro carácter."</span>);    	    	                     
+    							preguntarTocado=<span style='font-weight:bold;color:#7B0052;'>true</span>;	 	    	      	                      
+    						<span style='font-weight:bold;color:#D3171B'>}</span>	     	          	      	      	          	             
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    	          	                   		          					
+    					<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarHundido==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	          	                   
+    						System.out.println(<span style='color:#2A00FF'>"\n· Elija un carácter para representar la ficha \"hundido\":\n"</span>);   	                  
+    						fichaHundido = entrada.next();  	         	                       	      
+    	                         <span style='font-weight:bold;color:#7B0052;'>if</span> ((fichaHundido.matches(<span style='color:#2A00FF'>".?"</span>) != fichaHundido.matches(fichaAgua)) && (fichaHundido.matches(<span style='color:#2A00FF'>".?"</span>) != fichaHundido.matches(fichaTocado))) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  	    		    	     		    	     	    	                     
+    	                        	 preguntarHundido=<span style='font-weight:bold;color:#7B0052;'>false</span>;   	    	                        	    	                     
+    	    	                     fichas1=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    	    	                     <span style='font-weight:bold;color:#7B0052;'>break</span>;    	    	      	                         
+    	                         <span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    	      	    	                     
+    	                        	 System.out.println(<span style='color:#2A00FF'>"\n· Ficha no disponible. Por favor, elija otro carácter."</span>);    	    	                        	                        	 	 	    	  
+    	                         <span style='font-weight:bold;color:#D3171B'>}</span>	      	     	    	  	      	          	              
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    	         		       					    					
+    					System.out.println(<span style='color:#2A00FF'>"\n· Jugará con los siguientes símbolos (agua = \'"</span> + (fichaAgua) + <span style='color:#2A00FF'>"\', tocado = '"</span> + (fichaTocado) + <span style='color:#2A00FF'>"\' y hundido = \'"</span> + (fichaHundido) + <span style='color:#2A00FF'>"'.)"</span>); 
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (respuestaFichas.equalsIgnoreCase(<span style='color:#2A00FF'>"no"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>    	    	     	    	         		    	 					     	    	        		    	
+    					System.out.println(<span style='color:#2A00FF'>"\n· Jugará con los valores por defecto (agua = \"~\", tocado = \"*\" y hundido = \"#\")."</span>);   	    	      		    	
+    					fichaAgua = <span style='color:#2A00FF'>"~"</span>;
+    					fichaTocado = <span style='color:#2A00FF'>"*"</span>;
+    					fichaHundido = <span style='color:#2A00FF'>"#"</span>;
+    					preguntarFichas=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					fichas1=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;	    	  	    	     	           				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span><span style='font-weight:bold;color:#D3171B'>{</span>    	    	  
+    					System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta."</span>);   	    	     
+    					vecesPreguntado++;    	    	     
+    					respuestaIncorrecta=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    	     	        
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	          	      
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	          	          			
+    			
+    			<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    			      			     	    	      				    				
+    				System.out.println(<span style='color:#2A00FF'>"\n· ¿Está de acuerdo con estos valores?\n"</span>);    	    	  
+    				deAcuerdo = entrada.next();  				      			     	    	     				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (deAcuerdo.equalsIgnoreCase(<span style='color:#2A00FF'>"si"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>  				  		   				  
+    					preguntarFichas=<span style='font-weight:bold;color:#7B0052;'>false</span>; 
+    					fichas1=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;   				      			     	    	  
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (deAcuerdo.equalsIgnoreCase(<span style='color:#2A00FF'>"no"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>   				     				     	    		  
+    					System.out.println(<span style='color:#2A00FF'>"\n· Se volverá a preguntar de nuevo que símbolos desea usar."</span>);    				  
+    					vecesPreguntado++; 
+    					fichas1=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					preguntarAgua=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					preguntarTocado=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					preguntarHundido=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;   				      			      				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   				     				     					
+    					System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta."</span>);    				      			      				
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   		          		   
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	         	          		
+    		<span style='font-weight:bold;color:#D3171B'>}</span>    		  		  
+    	         	      
+    		<span style='color:#3F7F5F'>//3. También se podrá decidir cuantos barcos de longitud 2 horizontales, longitud 2 verticales, longitud 3 horizontales y longitud 3 verticales se van a crear.    	      
+</span>    		<span style='color:#3F7F5F'>//Se indicará al usuario si no es posible crear el número de barcos elegidos en el tablero creado. SE UTILIZARA UN MARGEN DEL 50% DEL TAMAÑO DEL TABLERO	      	      
+</span>    	        	      
+    		System.out.println(<span style='color:#2A00FF'>"\n· A continuación podrá elegir cuantos barcos de cada tamaño desea crear en el tablero."</span>);    	      
+    		System.out.println(<span style='color:#2A00FF'>"· Por convenio, se ha establecido que el numero total de casillas ocupadas por los barcos no supere en ningún caso el 50% de las casillas totales del tablero elegido."</span>);   	      
+    		System.out.println(<span style='color:#2A00FF'>"· De esta manera, como mínimo, un 50% de las casillas del tablero serán \"agua.\""</span>);    	          	      
+    	      
+    		<span style='font-weight:bold;color:#7B0052;'>switch</span> (tamaño) <span style='font-weight:bold;color:#D3171B'>{</span>
+    	          	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 5: limite=12; <span style='font-weight:bold;color:#7B0052;'>break</span>;    	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 6: limite=18; <span style='font-weight:bold;color:#7B0052;'>break</span>;    	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 7: limite=24; <span style='font-weight:bold;color:#7B0052;'>break</span>;    	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 8: limite=32; <span style='font-weight:bold;color:#7B0052;'>break</span>;   	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 9: limite=40; <span style='font-weight:bold;color:#7B0052;'>break</span>;    	      
+    		<span style='font-weight:bold;color:#7B0052;'>case</span> 10: limite=50; <span style='font-weight:bold;color:#7B0052;'>break</span>;	         	       
+    	      
+    		<span style='font-weight:bold;color:#D3171B'>}</span>	          	      	      	      	      
+    	      
+    		String[][] T3 = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];
+    		String[][] T5 = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];
+    	      	      		 	   	      
+    		<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarBarcos==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    		   		     			
+    			limpiarTablero(T3,tamaño); 
+    			limpiarTablero(T5,tamaño);
+    			casillasOcupadas = 0;
+    			     		    			
+    			<span style='color:#3F7F5F'>//----------------------\\
+</span>    		      		      
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> (preguntarH3==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>		  		     			  		      		    	  
+    				System.out.println(<span style='color:#2A00FF'>"\n· Indique cuántos barcos de longitud 3 horizontales quiere crear:\n"</span>);	          		    	  
+    				barcosH3=entrada.nextInt();	 	      	     	      	        		  	      	      	          	      	      
+    		    	  
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> ((barcosH3*3)&lt;=limite) <span style='font-weight:bold;color:#D3171B'>{</span>   	              	      		    		  
+    					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=barcosH3; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  		    	      		    			  
+    						crearBarcoHor3(T3,tamaño); 
+    						crearBarcoHor3(T5,tamaño);
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    	  	    	 		    		  	          		    		     		    		     		    	         					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (barcosH3*3 == limite) <span style='font-weight:bold;color:#D3171B'>{</span>   			          		    		      		    	    	  
+    						System.out.println(<span style='color:#2A00FF'>"\n· Se ha alcanzado el límite de casillas ocupadas.\n"</span>);	          		    		      		    	    	  
+    						preguntarH3=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarV3=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarH2=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarV2=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    		    	      <span style='font-weight:bold;color:#D3171B'>}</span>   		    	          		    	      
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;    		    	      		    	 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	              		    		 
+    					System.out.println(<span style='color:#2A00FF'>"\n· Error. El número de casillas ocupadas supera el límite permitido para el tamaño de tablero elegido. Actualmente puede crear entre 0 y "</span> + (limite-casillasOcupadas) / 3 + <span style='color:#2A00FF'>" barcos horizontales de longitud 3."</span>);	              		    		     					         		    	  
+    				<span style='font-weight:bold;color:#D3171B'>}</span>	      	      		  		      		    	 		          		          			
+    			<span style='font-weight:bold;color:#D3171B'>}</span>   		      		    		      
+    			casillasOcupadas = barcosH3*3;		      		      
+    		         		    
+    			<span style='color:#3F7F5F'>//---------------------\\
+</span>    	          	         
+    			<span style='font-weight:bold;color:#7B0052;'>while</span>((preguntarV3==<span style='font-weight:bold;color:#7B0052;'>true</span> || (casillasOcupadas&lt;limite)) && (limite-casillasOcupadas)&gt;=3) <span style='font-weight:bold;color:#D3171B'>{</span>    		      		     	        
+    				System.out.println(<span style='color:#2A00FF'>"\n· Indique cuántos barcos de longitud 3 verticales quiere crear:\n"</span>);	          	        	
+    				barcosV3 = entrada.nextInt();	      	                                        	        	
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (((barcosV3*3)+(barcosH3*3)) &lt;= limite) <span style='font-weight:bold;color:#D3171B'>{</span>             	    	    	        	
+    					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=barcosV3; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  		    	    	        		
+    						crearBarcoVer3(T3,tamaño); 
+    						crearBarcoVer3(T5,tamaño);
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	   					   	        		     	        		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (((barcosV3*3)+(barcosH3*3)) == limite) <span style='font-weight:bold;color:#D3171B'>{</span>         		    		    	        		
+    						System.out.println(<span style='color:#2A00FF'>"\n· Se ha alcanzado el límite de casillas ocupadas.\n"</span>);	          		    		     		    	    	
+    						preguntarH3=<span style='font-weight:bold;color:#7B0052;'>false</span>; 		    	    	
+    						preguntarV3=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarH2=<span style='font-weight:bold;color:#7B0052;'>false</span>;    		    	    	
+    						preguntarV2=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>false</span>;    		    	    	      		    	    
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	        		  	        		      	        		  	       	        		 
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;	      	        		     	        	      	        	      				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	             		    		
+    					System.out.println(<span style='color:#2A00FF'>"\n· Error. El número de casillas ocupadas supera el límite permitido para el tamaño de tablero elegido. Actualmente puede crear entre 0 y "</span> + (limite-casillasOcupadas) / 3 + <span style='color:#2A00FF'>" barcos verticales de longitud 3."</span>);	             	        		            	        		    					       	           	        	      				
+    				<span style='font-weight:bold;color:#D3171B'>}</span>                   	          
+    			<span style='font-weight:bold;color:#D3171B'>}</span>    	              	        
+    			casillasOcupadas += barcosV3*3;	                        
+    	       			
+    			<span style='color:#3F7F5F'>//---------------------\\
+</span>              	         	          
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> ((preguntarH2==<span style='font-weight:bold;color:#7B0052;'>true</span> && (casillasOcupadas&lt;limite)) && (limite-casillasOcupadas&gt;=2)) <span style='font-weight:bold;color:#D3171B'>{</span>    	      	          	        	  
+    				System.out.println(<span style='color:#2A00FF'>"\n· Indique cuántos barcos de longitud 2 horizontales quiere crear:\n"</span>);	         	        	
+    				barcosH2 = entrada.nextInt();	                          	        	
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (((barcosH2*2)+(barcosV3*3)+(barcosH3*3)) &lt;= limite) <span style='font-weight:bold;color:#D3171B'>{</span>	             	    	     	        	
+    					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=barcosH2; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  		    	      	        		
+    						crearBarcoHor2(T3,tamaño);
+    						crearBarcoHor2(T5,tamaño);
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	   					    	    	  	    	  	        		 	          	        		                        	        		  
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (((barcosH2*2)+(barcosV3*3)+(barcosH3*3)) == limite) <span style='font-weight:bold;color:#D3171B'>{</span>         		    		     	        			 
+    						System.out.println(<span style='color:#2A00FF'>"\n· Se ha alcanzado el límite de casillas ocupadas.\n"</span>);	          		    		     		    	    	
+    						preguntarH3=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarV3=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarH2=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarV2=<span style='font-weight:bold;color:#7B0052;'>false</span>;   		    	    	
+    						preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>false</span>;		    	    	  		    	        	        		  
+    					<span style='font-weight:bold;color:#D3171B'>}</span>                  	        	      	        		  
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;   	        	     	        	  
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	             		    		 
+    					System.out.println(<span style='color:#2A00FF'>"\n· Error. El número de casillas ocupadas supera el límite permitido para el tamaño de tablero elegido. Actualmente puede crear entre 0 y "</span> + (limite-casillasOcupadas) / 2 + <span style='color:#2A00FF'>" barcos horizontales de longitud 2."</span>);	          	          	        		     	        		   					   					    					       		  	                       	        	     				
+    				<span style='font-weight:bold;color:#D3171B'>}</span>	                   	              			
+    			<span style='font-weight:bold;color:#D3171B'>}</span>    	            	             			
+    			casillasOcupadas += barcosH2*2;	          
+    	          
+    	          
+    			<span style='color:#3F7F5F'>//---------------------\\
+</span>    	      	         	          
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> ((preguntarV2==<span style='font-weight:bold;color:#7B0052;'>true</span> || (casillasOcupadas&lt;limite)) && (limite-casillasOcupadas&gt;=2)) <span style='font-weight:bold;color:#D3171B'>{</span>                          	        
+    				System.out.println(<span style='color:#2A00FF'>"\n· Indique cuántos barcos de longitud 2 verticales quiere crear:\n"</span>);	         	        	
+    				barcosV2 = entrada.nextInt();	                       	        	
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (((barcosV2*2)+(barcosH2*2)+(barcosV3*3)+(barcosH3*3)) &lt;= limite) <span style='font-weight:bold;color:#D3171B'>{</span>	              	    	      	        	
+    					<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=barcosV2; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    	  		    	      	        		
+    						crearBarcoVer2(T3,tamaño); 
+    						crearBarcoVer2(T5,tamaño);
+    					<span style='font-weight:bold;color:#D3171B'>}</span>						    	    	     	        		
+    					preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>false</span>;    	        		
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;    	        	      	        	  
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	              		    	
+    					System.out.println(<span style='color:#2A00FF'>"\n· Error. El número de casillas ocupadas supera el límite permitido para el tamaño de tablero elegido. Actualmente puede crear entre 0 y "</span> + (limite-casillasOcupadas) / 2 + <span style='color:#2A00FF'>" barcos verticales de longitud 2."</span>);	                  		      	        		   					   	        	  
+    				<span style='font-weight:bold;color:#D3171B'>}</span>         	      	          	         
+    			<span style='font-weight:bold;color:#D3171B'>}</span>    	              	        
+    			casillasOcupadas += barcosV2*2;		          
+                  		  
+    			<span style='color:#3F7F5F'>//---------------------------\\
+</span>    		      		  
+    			System.out.println(<span style='color:#2A00FF'>"\n· Jugará con "</span> + (barcosH3) + <span style='color:#2A00FF'>" barco(s) horizontal(es) de longitud 3, "</span> + (barcosV3) + <span style='color:#2A00FF'>" barco(s) vertical(es) de longitud 3, "</span> + (barcosH2) + <span style='color:#2A00FF'>" barco(s) horizontal(es) de longitud 2 y "</span>    		  	   					
+    					+ (barcosV2) + <span style='color:#2A00FF'>" barco(s) vertical(es) de longitud 2."</span>);    		      		 
+    			System.out.println(<span style='color:#2A00FF'>"· ¿Está de acuerdo con la elección? Escriba \"si\" para continuar, o \"no\" para volver a elegir la cantidad de barcos de cada tipo.\n"</span>);    		   		 
+    			<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    		     		  
+    				deAcuerdo = entrada.next();   			     		  
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (deAcuerdo.equalsIgnoreCase(<span style='color:#2A00FF'>"si"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   			  		   			  
+    					preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>false</span>;    			 
+    					barcosTotales=(barcosH3)+(barcosV3)+(barcosV2)+(barcosH2);
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;   			     		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (deAcuerdo.equalsIgnoreCase(<span style='color:#2A00FF'>"no"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>   			      			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Se volverá a preguntar de nuevo la cantidad de barcos de cada tipo."</span>);   			     					
+    					preguntarBarcos=<span style='font-weight:bold;color:#7B0052;'>true</span>; 
+    					preguntarH3=<span style='font-weight:bold;color:#7B0052;'>true</span>;   		    	    	
+						preguntarV3=<span style='font-weight:bold;color:#7B0052;'>true</span>;   		    	    	
+						preguntarH2=<span style='font-weight:bold;color:#7B0052;'>true</span>;   		    	    	
+						preguntarV2=<span style='font-weight:bold;color:#7B0052;'>true</span>;
+						barcosH3=0;
+						barcosV3=0;
+						barcosH2=0;
+						barcosV2=0;
+    					<span style='font-weight:bold;color:#7B0052;'>break</span>;    		    					    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    			     			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta."</span>);    			     		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	          		 
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (preguntar8==<span style='font-weight:bold;color:#7B0052;'>true</span>);    		      		   		
+    		<span style='font-weight:bold;color:#D3171B'>}</span>		  		  	      
+    	      
+    	      
+    		<span style='color:#3F7F5F'>//4. Finalmente se permitirá elegir si quiere jugar un jugador o dos jugadores, utilizando entonces 2 tableros diferentes y alternando los disparos en cada tablero.
+</span>    	      	      	      	         	      
+    		<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    	     	    	  
+    			System.out.println(<span style='color:#2A00FF'>"\n· A continuación puede elegir si quiere jugar en el modo para dos jugadores (alternando dos tableros del tamaño elegido anteriormente). Escriba \"si\" para activar este modo o \"no\" para continuar en el modo de un jugador.\n"</span>);   		      
+    			preguntarDosJugadores = entrada.next();    	    	     	    	  
+    			<span style='font-weight:bold;color:#7B0052;'>if</span> (preguntarDosJugadores.equalsIgnoreCase(<span style='color:#2A00FF'>"si"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		      	    	      
+    				System.out.println(<span style='color:#2A00FF'>"\n· Modo para dos jugadores activado.\n"</span>);   	    	      
+    				modoDosJugadores=<span style='font-weight:bold;color:#7B0052;'>true</span>;   	    	      
+    				<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    	     	    	  
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (preguntarDosJugadores.equalsIgnoreCase(<span style='color:#2A00FF'>"no"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>  	    		      	    		  
+    				System.out.println(<span style='color:#2A00FF'>"\n· Modo para dos jugadores desactivado.\n"</span>);   	    		 
+    				modoDosJugadores=<span style='font-weight:bold;color:#7B0052;'>false</span>;   	    		 
+    				<span style='font-weight:bold;color:#7B0052;'>break</span>;  	    		     	    	 
+    			<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		     	    	
+    				System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta. Introduzca \"si\" o \"no\", por favor."</span>);	    		     	    	
+    			<span style='font-weight:bold;color:#D3171B'>}</span>    	    	  	    	  	    	      	       		
+    		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);          
+    		              
+    		<span style='color:#3F7F5F'>//Comienzo del juego en Modo Avanzado
+</span>    	          		
+    		String T4 [][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];  
+    		String T6 [][] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño][tamaño];
+    		limpiarTablero(T4,tamaño);
+    		limpiarTablero(T6,tamaño);
+    		
+    		<span style='font-weight:bold;color:#7B0052;'>if</span> (modoDosJugadores==<span style='font-weight:bold;color:#7B0052;'>false</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+            	     	    	  
+    			iniciarJuegoAvanzado();
+    			
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> (jugarAvanzado==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+    	    		      	    		 				  		 	    			          	    			 	    			    		    		     	    		   				 				    				  				
+    				tablero(T4,tamaño);   	    		 
+    	    		 
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna-1] == fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			  	    			    					
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);   	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Tocado!"</span>);   	    			     	    		     				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna-1] == fichaHundido) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Hundido!"</span>);  	    		     	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna-1] == fichaAgua) <span style='font-weight:bold;color:#D3171B'>{</span>   	 			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"    Agua..."</span>);    	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   	    		  
+    	    		 
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (disparosRealizados&gt;=1 || barcosHundidos==barcosTotales) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		      		  	    			      	    		 
+    					System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);    	    		 
+    					System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidos);    	    		      	    		
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		     	    		 
+    				
+    				System.out.println(<span style='color:#2A00FF'>"\n· Introduzca las coordenadas del disparo:"</span>);  
+    	    		           	    		  
+    				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    		   	    			       	    			  
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    		  	        	    				  
+    						System.out.print(<span style='color:#2A00FF'>"\n&gt; Fila = "</span>);  	    		  	      
+    						fila=entrada.nextInt();    	    					                             	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    		  	    	     	    		  	    	 
+    							<span style='font-weight:bold;color:#7B0052;'>if</span> (fila==i) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		  	    		 
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>true</span>;   	    		  	    		 
+    								filaInvalida=<span style='font-weight:bold;color:#7B0052;'>false</span>;   	    		  	    		 
+    								<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    		  	    	  
+    							<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    							<span style='font-weight:bold;color:#D3171B'>}</span>
+    						<span style='font-weight:bold;color:#D3171B'>}</span>   	    					  			     	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (correcto==<span style='font-weight:bold;color:#7B0052;'>false</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	    					
+    							System.out.println(<span style='color:#2A00FF'>"\n· Fila inválida.\n"</span>);  	    					
+    							tablero(T4,tamaño);    	    					
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);   	    					
+    							filaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    				  
+    	    		  	      <span style='font-weight:bold;color:#D3171B'>}</span>    	    		   	    			      
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (filaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);   	    		   	        	    		          
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    				    	    		              						
+    						System.out.print(<span style='color:#2A00FF'>"&gt; Columna = "</span>);	    		                     	    			      
+    						String columna2 = entrada.next();	  	    			      
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     	    			      
+    						String columnasValidas[] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño];   	    			      		         	    			      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	  						   	    					
+    							columnasValidas [i] = letrasColumna [i];	    					  	    			          						
+    						<span style='font-weight:bold;color:#D3171B'>}</span>	    			      	    			          	    			          	    			          						
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (Arrays.asList(columnasValidas).contains(columna2)) <span style='font-weight:bold;color:#D3171B'>{</span>	    			    	  		    	  		    		      	    			    	   							
+    							columna = (Arrays.asList(columnasValidas).indexOf(columna2)) + 1;		    		  	    	  		    			    	  		         	    			            	    			    		  
+    							<span style='font-weight:bold;color:#7B0052;'>break</span>;    			         	    			      
+    						<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    	    			    	  
+    							System.out.println(<span style='color:#2A00FF'>"\n· Columna inválida."</span>);    	    					  
+    							tablero(T4,tamaño);     	    					 
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);    	    					
+    							columnaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;    	    				  
+    						<span style='font-weight:bold;color:#D3171B'>}</span>    						    	    			      	      		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (columnaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);	    		    	              	    		          	    		          	    	    		      	    		          
+    	    	    		 
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna-1]!=fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>	    				       	    				     
+    						System.out.print(<span style='color:#2A00FF'>"\n· Casilla ocupada.\n"</span>);				     	    				    
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);  	    				   
+    						tablero(T4,tamaño);     	    				   
+    						casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    		             	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		        
+    						disparosRealizados++;   	    		        
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;    	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		           	            	    		       	    		     
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>);    	    		  
+    	    		    
+    				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1] != fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T4[fila-1][columna-1] = fichaTocado;	   	    			      	    		        				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1] == fichaVacia)<span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T4[fila-1][columna-1] = fichaAgua;	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>
+    	    	    		     	    		     
+    	    		     
+    				<span style='color:#3F7F5F'>//-----------------
+</span>    	    		        	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	 	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna]==fichaTocado && T4[fila-1][columna+1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		 	    		    		     	    		    
+    						T4[fila-1][columna-1]=fichaHundido;  	    		    	
+    						T4[fila-1][columna]=fichaHundido;  	    		    	
+    						T4[fila-1][columna+1]=fichaHundido;   	    		    	
+    						barcosHundidos++; 	    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	 	    		     	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaH3 && T3[fila-1][columna-2]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila-1][columna-2]==fichaCH3 && T4[fila-1][columna-2]==fichaTocado) && (T3[fila-1][columna]==fichaH3 && T4[fila-1][columna]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    	    		    
+    						T4[fila-1][columna-2]=fichaHundido;		    		    		    	    		    	
+    						T4[fila-1][columna-1]=fichaHundido;		    		    		    	    		    	
+    						T4[fila-1][columna]=fichaHundido;		    		    		    	    
+    						barcosHundidos++; 		    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila-1][columna-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaH3 && T3[fila-1][columna-3]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    			    			     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila-1][columna-3]==fichaCH3 && T4[fila-1][columna-3]==fichaTocado) && (T3[fila-1][columna-2]==fichaH3 && T4[fila-1][columna-2]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila-1][columna-3]=fichaHundido;		    		    		   	    		    	  						
+    						T4[fila-1][columna-2]=fichaHundido;	    		    		    	    		    	
+    						T4[fila-1][columna-1]=fichaHundido;		    		    		    	    		    	
+    						barcosHundidos++; 	    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila-1][columna-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>       		        				   	    		
+    				
+    				<span style='color:#3F7F5F'>//----------------------------  	    		   				   	    		
+</span>    				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaCH2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila-1][columna]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		    	    		    
+    						T4[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T4[fila-1][columna]=fichaHundido;   	    		    	
+    						barcosHundidos++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		    				 	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaH2) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T3[fila-1][columna-2]==fichaCH2 && T4[fila-1][columna-2]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila-1][columna-2]=fichaHundido;    	    		    	    						
+    						T4[fila-1][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidos++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		
+    				    	    		    
+    				<span style='color:#3F7F5F'>//-------------------------------
+</span>    	    		    				    	    		   				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila][columna-1]==fichaTocado && T4[fila+1][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		   	    		    
+    						T4[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T4[fila][columna-1]=fichaHundido;   	    		    	
+    						T4[fila+1][columna-1]=fichaHundido;   	    		    	
+    						barcosHundidos++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaV3 && T3[fila-2][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila-2][columna-1]==fichaCV3 && T4[fila-2][columna-1]==fichaTocado) && (T3[fila][columna-1]==fichaV3 && T4[fila][columna-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila-2][columna-1]=fichaHundido;   	    		    	  						
+    						T4[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T4[fila][columna-1]=fichaHundido;   	    		    	
+    						barcosHundidos++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaV3 && T3[fila-3][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila-3][columna-1]==fichaCV3 && T4[fila-3][columna-1]==fichaTocado) && (T3[fila-2][columna-1]==fichaV3 && T4[fila-2][columna-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila-3][columna-1]=fichaHundido;    	    		    	
+    						T4[fila-2][columna-1]=fichaHundido;    	    		    	
+    						T4[fila-1][columna-1]=fichaHundido;    	    		    	
+    						barcosHundidos++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    	    		    		T4[fila-1][columna-1]=fichaTocado;   	    		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>     	    		
+    				    	    					
+    				<span style='color:#3F7F5F'>//-------------------------------------------   	    		   				
+</span>    	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaCV2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		     	    		    
+    						T4[fila-1][columna-1]=fichaHundido;    	    		    	
+    						T4[fila][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidos++; 	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	     	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    				   	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila-1][columna-1]==fichaV2) <span style='font-weight:bold;color:#D3171B'>{</span>  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T3[fila-2][columna-1]==fichaCV2 && T4[fila-2][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila-2][columna-1]=fichaHundido;    	    		    	
+    						T4[fila-1][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidos++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    	    		        					    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>  	    		  	    		      	    		      	    		    
+    	    		   
+    				<span style='color:#3F7F5F'>//-------------------------------------------	  		   
+</span>    	    		     
+    	    		    
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (barcosHundidos==barcosTotales) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			      	    			      	    		
+    					tablero(T4,tamaño);		      	    			      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);    	    			
+    					System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidos);    	    			      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Partida finalizada. ¡Los "</span> + barcosTotales + <span style='color:#2A00FF'>" barcos han sido hundidos!"</span>);    	    			
+    					System.out.println(<span style='color:#2A00FF'>"· Hasta ahora lleva "</span> + partidasJugadas + <span style='color:#2A00FF'>" partida(s) jugada(s)."</span>);    	    			  		 		      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Puede seguir jugando si lo desea. Elija una de las opciones a continuación, por favor. "</span>);   	    			     	    			
+    					
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    			  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n 1. Empezar otra partida en Modo Básico."</span>);	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 2. Empezar otra partida en Modo Avanzado."</span>);   	    			      	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 3. Salir."</span>);  	    			  
+    	    			  
+    					System.out.print(<span style='color:#2A00FF'>"\n&gt;"</span>);		     	    
+    					jugarOtraVez = entrada.next();   	    			    					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"1"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			   						   	    				
+    						basico=<span style='font-weight:bold;color:#7B0052;'>true</span>;   						 
+    						avanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>; 
+    						modoDosJugadores=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						iniciarJuegoBasico();
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);
+    						System.out.println(<span style='color:#2A00FF'>"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; NUEVA PARTIDA EN MODO BÁSICO &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;\n"</span>);
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    			      						   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"2"</span>))<span style='font-weight:bold;color:#D3171B'>{</span> 	    				     	    				  
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     						    						  						
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;    						
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>; 	    				  	    			     	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"3"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>    	    				 
+    						System.out.println(<span style='color:#2A00FF'>"\n · Gracias por jugar a \"Hundir la Flota\"."</span>);							
+    						System.exit(0);	  	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	     	    			
+    						System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta"</span>);   	    				
+    						respuestaIncorrecta = <span style='font-weight:bold;color:#7B0052;'>true</span>;   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		      	    			
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span>(respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	    		      	    		   
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   	    	  	    	      			     				    				
+    			<span style='font-weight:bold;color:#D3171B'>}</span>           	  
+              <span style='font-weight:bold;color:#D3171B'>}</span>
+    		
+    		<span style='font-weight:bold;color:#7B0052;'>if</span> (modoDosJugadores==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+   	    	  
+    			iniciarJuegoAvanzado();
+    			System.out.println(<span style='color:#2A00FF'>"· Introducir nombre del Jugador 1:\n"</span>);
+    			System.out.print(<span style='color:#2A00FF'>"&gt;"</span>);
+    			jugador1=entrada.next();
+    			System.out.println(<span style='color:#2A00FF'>"\n· Introducir nombre del Jugador 2:\n "</span>);
+    			System.out.println(<span style='color:#2A00FF'>"&gt;"</span>);
+    			jugador2=entrada.next();
+    			    			
+    			<span style='font-weight:bold;color:#7B0052;'>while</span> (jugarAvanzado==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+    				   				    	    		      	    		 				  		 	    			          	    			 	    			    		    		     	    		   				 				    				  				
+    				System.out.println(<span style='color:#2A00FF'>"\n&gt;Tablero de "</span> + jugador1 + <span style='color:#2A00FF'>"\n"</span>);
+    				tablero(T4,tamaño);   	    		 
+    				    	    		 
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2-1] == fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			  	    			    					
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);   	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Tocado!"</span>);   	    			     	    		     				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2-1] == fichaHundido) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Hundido!"</span>);  	    		     	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2-1] == fichaAgua) <span style='font-weight:bold;color:#D3171B'>{</span>   	 			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"    Agua..."</span>);    	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   
+    				
+    				System.out.println(<span style='color:#2A00FF'>"\n&gt;Tablero de "</span> + jugador2 + <span style='color:#2A00FF'>"\n"</span>);
+    				tablero(T6,tamaño);
+    				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna-1] == fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			  	    			    					
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);   	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Tocado!"</span>);   	    			     	    		     				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna-1] == fichaHundido) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"  ¡Hundido!"</span>);  	    		     	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna-1] == fichaAgua) <span style='font-weight:bold;color:#D3171B'>{</span>   	 			     	    			 
+    					String espacios = String.format(<span style='color:#2A00FF'>"%"</span>+(tamaño-4)+<span style='color:#2A00FF'>"s"</span>, <span style='color:#2A00FF'>""</span>);  	    			 
+    					System.out.println(<span style='color:#2A00FF'>"\n "</span> + espacios + <span style='color:#2A00FF'>"    Agua..."</span>);    	    		 
+    				<span style='font-weight:bold;color:#D3171B'>}</span>  
+    	    		 
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (disparosRealizados&gt;=1 || barcosHundidos==barcosTotales) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		      		  	    			      	    		 
+    					System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);    	    		 
+    					System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidosJ1 + <span style='color:#2A00FF'>" ("</span> + jugador1 + <span style='color:#2A00FF'>"), "</span> + barcosHundidosJ2 + <span style='color:#2A00FF'>" ("</span> + jugador2 +<span style='color:#2A00FF'>")"</span>);    	    		      	    		
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		     	    		 
+    				
+    				System.out.println(<span style='color:#2A00FF'>"\n· "</span> + jugador1 + <span style='color:#2A00FF'>", introduzca las coordenadas del disparo en el tablero de "</span> + jugador2 + <span style='color:#2A00FF'>":"</span>);  
+    	    		           	    		  
+    				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    		   	    			       	    			  
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    		  	        	    				  
+    						System.out.print(<span style='color:#2A00FF'>"\n&gt; Fila = "</span>);  	    		  	      
+    						fila=entrada.nextInt();    	    					                             	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    		  	    	     	    		  	    	 
+    							<span style='font-weight:bold;color:#7B0052;'>if</span> (fila==i) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		  	    		 
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>true</span>;   	    		  	    		 
+    								filaInvalida=<span style='font-weight:bold;color:#7B0052;'>false</span>;   	    		  	    		 
+    								<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    		  	    	  
+    							<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    							<span style='font-weight:bold;color:#D3171B'>}</span>
+    						<span style='font-weight:bold;color:#D3171B'>}</span>   	    					  			     	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (correcto==<span style='font-weight:bold;color:#7B0052;'>false</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	    					
+    							System.out.println(<span style='color:#2A00FF'>"\n· Fila inválida.\n"</span>);  	    					
+    							tablero(T6,tamaño);    	    					
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);   	    					
+    							filaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    				  
+    	    		  	      <span style='font-weight:bold;color:#D3171B'>}</span>    	    		   	    			      
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (filaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);   	    		   	        	    		          
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    				    	    		              						
+    						System.out.print(<span style='color:#2A00FF'>"&gt; Columna = "</span>);	    		                     	    			      
+    						String columna2 = entrada.next();  	    			      
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     	    			      
+    						String columnasValidas[] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño];   	    			      		         	    			      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	  						   	    					
+    							columnasValidas [i] = letrasColumna [i];	    					  	    			          						
+    						<span style='font-weight:bold;color:#D3171B'>}</span>	    			      	    			          	    			          	    			          						
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (Arrays.asList(columnasValidas).contains(columna2)) <span style='font-weight:bold;color:#D3171B'>{</span>	    			    	  		    	  		    		      	    			    	   							
+    							columna = (Arrays.asList(columnasValidas).indexOf(columna2)) + 1;		    		  	    	  		    			    	  		         	    			            	    			    		  
+    							<span style='font-weight:bold;color:#7B0052;'>break</span>;    			         	    			      
+    						<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    	    			    	  
+    							System.out.println(<span style='color:#2A00FF'>"\n· Columna inválida."</span>);    	    					  
+    							tablero(T6,tamaño);     	    					 
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);    	    					
+    							columnaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;    	    				  
+    						<span style='font-weight:bold;color:#D3171B'>}</span>    						    	    			      	      		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (columnaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);	    		    	              	    		          	    		          	    	    		      	    		          
+    	    	    		     					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna-1]!=fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>	    				       	    				     
+    						System.out.print(<span style='color:#2A00FF'>"\n· Casilla ocupada.\n"</span>);				     	    				    
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);  	    				   
+    						tablero(T6,tamaño);     	    				   
+    						casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    		             	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		        
+    						disparosRealizados++;   	    		        
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;    	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		           	            	    		       	    		     
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>);    
+    				
+    				System.out.println(<span style='color:#2A00FF'>"· "</span> + jugador2 + <span style='color:#2A00FF'>", introduzca las coordenadas del disparo en el tablero de "</span> + jugador1 + <span style='color:#2A00FF'>":"</span>);  
+     	    		  
+    				<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    		   	    			       	    			  
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    		  	        	    				  
+    						System.out.print(<span style='color:#2A00FF'>"\n&gt; Fila = "</span>);  	    		  	      
+    						fila2=entrada.nextInt();    	    					                             	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 1; i&lt;=tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	    		  	    	     	    		  	    	 
+    							<span style='font-weight:bold;color:#7B0052;'>if</span> (fila2==i) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		  	    		 
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>true</span>;   	    		  	    		 
+    								filaInvalida=<span style='font-weight:bold;color:#7B0052;'>false</span>;   	    		  	    		 
+    								<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    		  	    	  
+    							<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    								correcto=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    							<span style='font-weight:bold;color:#D3171B'>}</span>
+    						<span style='font-weight:bold;color:#D3171B'>}</span>   	    					  			     	    		  	      
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (correcto==<span style='font-weight:bold;color:#7B0052;'>false</span>) <span style='font-weight:bold;color:#D3171B'>{</span>    	    					
+    							System.out.println(<span style='color:#2A00FF'>"\n· Fila inválida.\n"</span>);  	    					
+    							tablero(T4,tamaño);    	    					
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);   	    					
+    							filaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    				  
+    	    		  	      <span style='font-weight:bold;color:#D3171B'>}</span>    	    		   	    			      
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (filaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);   	    		   	        	    		          
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    				    	    		              						
+    						System.out.print(<span style='color:#2A00FF'>"&gt; Columna = "</span>);	    		                     	    			      
+    						String columna3 = entrada.next();	  	    			      
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     	    			      
+    						String columnasValidas[] = <span style='font-weight:bold;color:#7B0052;'>new</span> String [tamaño];   	    			      		         	    			      
+    						<span style='font-weight:bold;color:#7B0052;'>for</span> (<span style='font-weight:bold;color:#7B0052;'>int</span> i = 0; i&lt;tamaño; i++) <span style='font-weight:bold;color:#D3171B'>{</span>	  						   	    					
+    							columnasValidas [i] = letrasColumna [i];	    					  	    			          						
+    						<span style='font-weight:bold;color:#D3171B'>}</span>	    			      	    			          	    			          	    			          						
+    						<span style='font-weight:bold;color:#7B0052;'>if</span> (Arrays.asList(columnasValidas).contains(columna3)) <span style='font-weight:bold;color:#D3171B'>{</span>	    			    	  		    	  		    		      	    			    	   							
+    							columna2 = (Arrays.asList(columnasValidas).indexOf(columna3)) + 1;		    		  	    	  		    			    	  		         	    			            	    			    		  
+    							<span style='font-weight:bold;color:#7B0052;'>break</span>;    			         	    			      
+    						<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	    						    	    			    	  
+    							System.out.println(<span style='color:#2A00FF'>"\n· Columna inválida."</span>);    	    					  
+    							tablero(T4,tamaño);     	    					 
+    							System.out.println(<span style='color:#2A00FF'>" "</span>);    	    					
+    							columnaInvalida=<span style='font-weight:bold;color:#7B0052;'>true</span>;    	    				  
+    						<span style='font-weight:bold;color:#D3171B'>}</span>    						    	    			      	      		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (columnaInvalida==<span style='font-weight:bold;color:#7B0052;'>true</span>);	    		    	              	    		          	    		          	    	    		      	    		          
+    	    	    		     					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2-1]!=fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>	    				       	    				     
+    						System.out.print(<span style='color:#2A00FF'>"\n· Casilla ocupada.\n"</span>);				     	    				    
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);  	    				   
+    						tablero(T4,tamaño);     	    				   
+    						casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>;	    		             	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		        
+    						disparosRealizados++;   	    		        
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;    	    		         
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		           	            	    		       	    		     
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span> (casillaOcupada=<span style='font-weight:bold;color:#7B0052;'>true</span>); 
+    	    		    
+    				  				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1] != fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T6[fila-1][columna-1] = fichaTocado;	   	    			      	    		        				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1] == fichaVacia)<span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T6[fila-1][columna-1] = fichaAgua;	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>
+    	    	    	
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1] != fichaVacia) <span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T4[fila2-1][columna2-1] = fichaTocado;	   	    			      	    		        				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1] == fichaVacia)<span style='font-weight:bold;color:#D3171B'>{</span>    	    			    	    			      
+    					T4[fila2-1][columna2-1] = fichaAgua;	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>
+    	    		     
+    				<span style='color:#3F7F5F'>//-----------------
+</span>    	    		        	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	 	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna]==fichaTocado && T6[fila-1][columna+1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		 	    		    		     	    		    
+    						T6[fila-1][columna-1]=fichaHundido;  	    		    	
+    						T6[fila-1][columna]=fichaHundido;  	    		    	
+    						T6[fila-1][columna+1]=fichaHundido;   	    		    	
+    						barcosHundidosJ1++; 	    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T6[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	 	    		     	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaH3 && T5[fila-1][columna-2]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T5[fila-1][columna-2]==fichaCH3 && T6[fila-1][columna-2]==fichaTocado) && (T5[fila-1][columna]==fichaH3 && T6[fila-1][columna]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    	    		    
+    						T6[fila-1][columna-2]=fichaHundido;		    		    		    	    		    	
+    						T6[fila-1][columna-1]=fichaHundido;		    		    		    	    		    	
+    						T6[fila-1][columna]=fichaHundido;		    		    		    	    
+    						barcosHundidosJ1++; 		    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T6[fila-1][columna-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaH3 && T5[fila-1][columna-3]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    			    			     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T5[fila-1][columna-3]==fichaCH3 && T6[fila-1][columna-3]==fichaTocado) && (T5[fila-1][columna-2]==fichaH3 && T6[fila-1][columna-2]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T6[fila-1][columna-3]=fichaHundido;		    		    		   	    		    	  						
+    						T6[fila-1][columna-2]=fichaHundido;	    		    		    	    		    	
+    						T6[fila-1][columna-1]=fichaHundido;		    		    		    	    		    	
+    						barcosHundidosJ1++; 	    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T6[fila-1][columna-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>       		        				   	    		
+    				
+    				<span style='color:#3F7F5F'>//----------------------------  	    		   				   	    		
+</span>    				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaCH2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila-1][columna]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		    	    		    
+    						T6[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T6[fila-1][columna]=fichaHundido;   	    		    	
+    						barcosHundidosJ1++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T6[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		    				 	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaH2) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T5[fila-1][columna-2]==fichaCH2 && T4[fila-1][columna-2]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T6[fila-1][columna-2]=fichaHundido;    	    		    	    						
+    						T6[fila-1][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ1++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T6[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		
+    				    	    		    
+    				<span style='color:#3F7F5F'>//-------------------------------
+</span>    	    		    				    	    		   				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila][columna-1]==fichaTocado && T6[fila+1][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		   	    		    
+    						T6[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T6[fila][columna-1]=fichaHundido;   	    		    	
+    						T6[fila+1][columna-1]=fichaHundido;   	    		    	
+    						barcosHundidosJ1++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T6[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaV3 && T5[fila-2][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T5[fila-2][columna-1]==fichaCV3 && T6[fila-2][columna-1]==fichaTocado) && (T5[fila][columna-1]==fichaV3 && T6[fila][columna-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T6[fila-2][columna-1]=fichaHundido;   	    		    	  						
+    						T6[fila-1][columna-1]=fichaHundido;   	    		    	
+    						T6[fila][columna-1]=fichaHundido;   	    		    	
+    						barcosHundidosJ1++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T6[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaV3 && T5[fila-3][columna-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T5[fila-3][columna-1]==fichaCV3 && T6[fila-3][columna-1]==fichaTocado) && (T5[fila-2][columna-1]==fichaV3 && T6[fila-2][columna-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T6[fila-3][columna-1]=fichaHundido;    	    		    	
+    						T6[fila-2][columna-1]=fichaHundido;    	    		    	
+    						T6[fila-1][columna-1]=fichaHundido;    	    		    	
+    						barcosHundidosJ1++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    		
+    						T6[fila-1][columna-1]=fichaTocado;   	    		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>     	    		
+    				    	    					
+    				<span style='color:#3F7F5F'>//-------------------------------------------   	    		   				
+</span>    	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaCV2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T6[fila][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		     	    		    
+    						T6[fila-1][columna-1]=fichaHundido;    	    		    	
+    						T6[fila][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ1++; 	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T6[fila-1][columna-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	     	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    				   	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T5[fila-1][columna-1]==fichaV2) <span style='font-weight:bold;color:#D3171B'>{</span>  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T5[fila-2][columna-1]==fichaCV2 && T6[fila-2][columna-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T6[fila-2][columna-1]=fichaHundido;    	    		    	
+    						T6[fila-1][columna-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ1++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T6[fila-1][columna-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    	    		        					    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>  	    		  	    		      	    		      	    		        	    		      			
+    				
+    				<span style='color:#3F7F5F'>//-----------------
+</span>    	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	 	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2]==fichaTocado && T4[fila2-1][columna2+1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		 	    		    		     	    		    
+    						T4[fila2-1][columna2-1]=fichaHundido;  	    		    	
+    						T4[fila2-1][columna2]=fichaHundido;  	    		    	
+    						T4[fila2-1][columna2+1]=fichaHundido;   	    		    	
+    						barcosHundidosJ2++; 	    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	 	    		     	    		         	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaH3 && T3[fila2-1][columna2-2]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila2-1][columna2-2]==fichaCH3 && T4[fila2-1][columna2-2]==fichaTocado) && (T3[fila2-1][columna2]==fichaH3 && T4[fila2-1][columna2]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		    	    		    
+    						T4[fila2-1][columna2-2]=fichaHundido;		    		    		    	    		    	
+    						T4[fila2-1][columna2-1]=fichaHundido;		    		    		    	    		    	
+    						T4[fila2-1][columna2]=fichaHundido;		    		    		    	    
+    						barcosHundidosJ2++; 		    		    	    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaH3 && T3[fila2-1][columna2-3]==fichaCH3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    			    			     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila2-1][columna2-3]==fichaCH3 && T4[fila2-1][columna2-3]==fichaTocado) && (T3[fila2-1][columna2-2]==fichaH3 && T4[fila2-1][columna2-2]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila2-1][columna2-3]=fichaHundido;		    		    		   	    		    	  						
+    						T4[fila2-1][columna2-2]=fichaHundido;	    		    		    	    		    	
+    						T4[fila2-1][columna2-1]=fichaHundido;		    		    		    	    		    	
+    						barcosHundidosJ2++; 	    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>		    		    		   	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;		    		    	   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>		    		    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>       		        				   	    		
+    				
+    				<span style='color:#3F7F5F'>//----------------------------  	    		   				   	    		
+</span>    				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaCH2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2-1][columna2]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		    	    		    
+    						T4[fila2-1][columna2-1]=fichaHundido;   	    		    	
+    						T4[fila2-1][columna2]=fichaHundido;   	    		    	
+    						barcosHundidosJ2++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		    				 	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaH2) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T3[fila2-1][columna2-2]==fichaCH2 && T4[fila2-1][columna2-2]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila2-1][columna2-2]=fichaHundido;    	    		    	    						
+    						T4[fila2-1][columna2-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ2++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>    	    		
+    				    	    		    
+    				<span style='color:#3F7F5F'>//-------------------------------
+</span>    	    		    				    	    		   				
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	     	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2][columna2-1]==fichaTocado && T4[fila2+1][columna2-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		   	    		    
+    						T4[fila2-1][columna2-1]=fichaHundido;   	    		    	
+    						T4[fila2][columna2-1]=fichaHundido;   	    		    	
+    						T4[fila2+1][columna2-1]=fichaHundido;   	    		    	
+    						barcosHundidosJ2++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaV3 && T3[fila2-2][columna2-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila2-2][columna2-1]==fichaCV3 && T4[fila2-2][columna2-1]==fichaTocado) && (T3[fila2][columna2-1]==fichaV3 && T4[fila2][columna2-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila2-2][columna2-1]=fichaHundido;   	    		    	  						
+    						T4[fila2-1][columna2-1]=fichaHundido;   	    		    	
+    						T4[fila2][columna2-1]=fichaHundido;   	    		    	
+    						barcosHundidosJ2++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaV3 && T3[fila2-3][columna2-1]==fichaCV3) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>((T3[fila2-3][columna2-1]==fichaCV3 && T4[fila2-3][columna2-1]==fichaTocado) && (T3[fila2-2][columna2-1]==fichaV3 && T4[fila2-2][columna2-1]==fichaTocado)) <span style='font-weight:bold;color:#D3171B'>{</span>    	    		    
+    						T4[fila2-3][columna2-1]=fichaHundido;    	    		    	
+    						T4[fila2-2][columna2-1]=fichaHundido;    	    		    	
+    						T4[fila2-1][columna2-1]=fichaHundido;    	    		    	
+    						barcosHundidosJ2++;     	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+    	    		    		T4[fila2-1][columna2-1]=fichaTocado;   	    		    
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>     	    		
+    				    	    					
+    				<span style='color:#3F7F5F'>//-------------------------------------------   	    		   				
+</span>    	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaCV2) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    	  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (T4[fila2][columna2-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>	    		    		 	    		    		     	    		    
+    						T4[fila2-1][columna2-1]=fichaHundido;    	    		    	
+    						T4[fila2][columna2-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ2++; 	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>	    		    	     	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>   	    		    				   	    		
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (T3[fila2-1][columna2-1]==fichaV2) <span style='font-weight:bold;color:#D3171B'>{</span>  	    		
+    					<span style='font-weight:bold;color:#7B0052;'>if</span>(T3[fila2-2][columna2-1]==fichaCV2 && T4[fila2-2][columna2-1]==fichaTocado) <span style='font-weight:bold;color:#D3171B'>{</span>   	    		    
+    						T4[fila2-2][columna2-1]=fichaHundido;    	    		    	
+    						T4[fila2-1][columna2-1]=fichaHundido;	    	    		    	
+    						barcosHundidosJ2++;    	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>  	    		    
+    						T4[fila2-1][columna2-1]=fichaTocado;   	    		    	
+    					<span style='font-weight:bold;color:#D3171B'>}</span>    	    		        					    	    		    
+    				<span style='font-weight:bold;color:#D3171B'>}</span>  	    		  	    		      	    		      	    		    
+    	    		   
+    				<span style='color:#3F7F5F'>//-------------------------------------------	
+</span>    	    		         	    		    
+    				<span style='font-weight:bold;color:#7B0052;'>if</span> (barcosHundidosJ1==barcosTotales) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			      	    			      	    		
+    					tablero(T6,tamaño);		      	    			      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);    	    			    					
+    					System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidosJ1 + <span style='color:#2A00FF'>" ("</span> + jugador1 + <span style='color:#2A00FF'>"), "</span> + barcosHundidosJ2 + <span style='color:#2A00FF'>" ("</span> + jugador2 +<span style='color:#2A00FF'>")"</span>);    	    		      	    		
+    					System.out.println(<span style='color:#2A00FF'>"\n· Partida finalizada. Gana "</span> + jugador1 + <span style='color:#2A00FF'>". ¡Los "</span> + barcosTotales + <span style='color:#2A00FF'>" barcos han sido hundidos!"</span>);    	    			
+    					System.out.println(<span style='color:#2A00FF'>"· Hasta ahora se han jugado "</span> + partidasJugadas + <span style='color:#2A00FF'>" partida(s)"</span>);    	    			  		 		      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Pueden seguir jugando si lo desean. Elijan una de las opciones a continuación, por favor. "</span>);   	    			     	    			
+    					
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    			  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n 1. Empezar otra partida en Modo Básico."</span>);	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 2. Empezar otra partida en Modo Avanzado."</span>);   	    			      	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 3. Salir."</span>);  	    			  
+    	    			  
+    					System.out.print(<span style='color:#2A00FF'>"\n&gt;"</span>);		     	    
+    					jugarOtraVez = entrada.next();   	    			    					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"1"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			   						   	    				
+    						basico=<span style='font-weight:bold;color:#7B0052;'>true</span>;   						 
+    						avanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>; 
+    						modoDosJugadores=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						iniciarJuegoBasico();
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);
+    						System.out.println(<span style='color:#2A00FF'>"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; NUEVA PARTIDA EN MODO BÁSICO &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;\n"</span>);
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    			      						   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"2"</span>))<span style='font-weight:bold;color:#D3171B'>{</span> 	    				     	    				  
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     						    						  						
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;    						
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>; 	    				  	    			     	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"3"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>    	    				 
+    						System.out.println(<span style='color:#2A00FF'>"\n · Gracias por jugar a \"Hundir la Flota\"."</span>);							
+    						System.exit(0);	   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	     	    			
+    						System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta"</span>);   	    				
+    						respuestaIncorrecta = <span style='font-weight:bold;color:#7B0052;'>true</span>;   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		      	    			
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span>(respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>);    	    		      	    		   
+    				
+    				<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (barcosHundidosJ2==barcosTotales) <span style='font-weight:bold;color:#D3171B'>{</span>
+    					tablero(T4,tamaño);		      	    			      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Disparos realizados: "</span> + disparosRealizados);    	    			
+    					System.out.println(<span style='color:#2A00FF'>"· Barcos hundidos: "</span> + barcosHundidosJ1 + <span style='color:#2A00FF'>" ("</span> + jugador1 + <span style='color:#2A00FF'>"), "</span> + barcosHundidosJ2 + <span style='color:#2A00FF'>" ("</span> + jugador2 +<span style='color:#2A00FF'>")"</span>);    	    		      	    		
+    					System.out.println(<span style='color:#2A00FF'>"\n· Partida finalizada. Gana "</span> + jugador2 + <span style='color:#2A00FF'>". ¡Los "</span> + barcosTotales + <span style='color:#2A00FF'>" barcos han sido hundidos!"</span>);    	    			
+    					System.out.println(<span style='color:#2A00FF'>"· Hasta ahora se han jugado "</span> + partidasJugadas + <span style='color:#2A00FF'>" partida(s)"</span>);    	    			  		 		      	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n· Pueden seguir jugando si lo desean. Elijan una de las opciones a continuación, por favor. "</span>);   	    			     	    			
+    					
+    					<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>    	    			  	    			
+    					System.out.println(<span style='color:#2A00FF'>"\n 1. Empezar otra partida en Modo Básico."</span>);	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 2. Empezar otra partida en Modo Avanzado."</span>);   	    			      	    			  
+    					System.out.println(<span style='color:#2A00FF'>" 3. Salir."</span>);  	    			  
+    	    			  
+    					System.out.print(<span style='color:#2A00FF'>"\n&gt;"</span>);		     	    
+    					jugarOtraVez = entrada.next();   	    			    					
+    					<span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"1"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>   	    			   						   	    				
+    						basico=<span style='font-weight:bold;color:#7B0052;'>true</span>;   						 
+    						avanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>; 
+    						modoDosJugadores=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;
+    						iniciarJuegoBasico();
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);
+    						System.out.println(<span style='color:#2A00FF'>"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; NUEVA PARTIDA EN MODO BÁSICO &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;\n"</span>);
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>;   	    			      						   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"2"</span>))<span style='font-weight:bold;color:#D3171B'>{</span> 	    				     	    				  
+    						System.out.println(<span style='color:#2A00FF'>" "</span>);     						    						  						
+    						jugarAvanzado=<span style='font-weight:bold;color:#7B0052;'>false</span>;    						
+    						<span style='font-weight:bold;color:#7B0052;'>break</span>; 	    				  	    			     	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (jugarOtraVez.equals(<span style='color:#2A00FF'>"3"</span>))<span style='font-weight:bold;color:#D3171B'>{</span>    	    				 
+    						System.out.println(<span style='color:#2A00FF'>"\n · Gracias por jugar a \"Hundir la Flota\"."</span>);							
+    						System.exit(0);	   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>	     	    			
+    						System.out.println(<span style='color:#2A00FF'>"\n· Respuesta incorrecta"</span>);   	    				
+    						respuestaIncorrecta = <span style='font-weight:bold;color:#7B0052;'>true</span>;   	    			  
+    					<span style='font-weight:bold;color:#D3171B'>}</span>   	    		      	    			
+    					<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span>(respuestaIncorrecta==<span style='font-weight:bold;color:#7B0052;'>true</span>); 
+    				<span style='font-weight:bold;color:#D3171B'>}</span>
+    			<span style='font-weight:bold;color:#D3171B'>}</span>           	  
+              <span style='font-weight:bold;color:#D3171B'>}</span> 
+    	<span style='font-weight:bold;color:#D3171B'>}</span>   
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+	
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+								
+		mensajeIntroduccion();
+		
+		<span style='font-weight:bold;color:#7B0052;'>do</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+		
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (basico==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+			modoBasico();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (avanzado==<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+			modoAvanzado();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		
+		<span style='font-weight:bold;color:#D3171B'>}</span><span style='font-weight:bold;color:#7B0052;'>while</span>(jugarOtra=<span style='font-weight:bold;color:#7B0052;'>true</span>);									            	  	  
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+<span style='font-weight:bold;color:#D3171B'>}</span></pre>
+		
+		</div>
+	</div>
+	</div>
+</body>
+</html>	

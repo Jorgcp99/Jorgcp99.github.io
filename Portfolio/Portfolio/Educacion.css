@@ -1,0 +1,130 @@
+body{
+		margin-bottom:0px;
+		margin:0px;
+		background-color:#e6e6e6;
+		
+	}
+	#Menu{
+		display:flex;
+		padding-top:20px;
+		margin: auto;
+		display:flex;
+		
+		background-color:white;
+		height:50px;
+		justify-content:space-around;
+		}
+	
+	#Menu  a{
+		
+		text-decoration:none;
+		font:bold 16px Verdana;
+		padding:15px;
+		border-bottom: 2px solid transparent;
+		margin-left:20px;
+		color: #274855;
+		height:20px;
+	}
+	#Menu div{
+	
+		display:flex;
+		justify-content:space-around;
+		align-items:center;
+		padding :8px;
+	}
+	#Menu  a:hover{
+		border-bottom: 2px solid #cc0000;
+		color:#cc0000;
+	}
+	
+	#educacion{
+		
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content:space-between;
+		height:420px;
+		text-align:center;
+		align-items:center;
+		padding-top:15px;
+	}
+	#educacion div{
+		display:flex;
+		font:20px Verdana;
+		background-color:#0086b3;
+		
+		justify-content:center;
+		align-items:center;
+	}
+	#izquierda{
+		width:400px;
+		height:100%;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+		overflow:hidden;
+		transition:2s;
+		position:relative;
+	}
+	#izquierda:hover{
+		width:700px;
+	}
+	#izquierda:hover #titulo1{
+		opacity:0;	
+	}
+	#titulo1{
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		position:absolute;
+		opacity: 1;
+		transition:2s;
+	}
+	#aux1{
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		position:relative;
+		display:table;
+		transition:2s;
+		opacity:0;
+		text-align:left;
+		width:700px;
+	}
+	#izquierda:hover #aux1{
+		opacity:1;
+		
+	}	
+	#derecha{
+		width:400px;
+		height:100%;
+		overflow:hidden;
+		transition:2s;
+		position:relative;
+		border-top-left-radius: 50px;
+		border-bottom-left-radius: 50px;
+	}
+	
+	#derecha:hover{
+		width:700px;
+	}
+	#derecha:hover #titulo2{
+		opacity:0;	
+	}
+	#titulo2{
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+		position:absolute;
+		opacity: 1;
+		transition:2s;
+	}
+	#aux2{
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+		position:relative;
+		display:table;
+		transition:2s;
+		opacity:0;
+		text-align:left;
+		width:700px;
+	}
+	#derecha:hover #aux2{
+		opacity:1;
+		
+	}	
