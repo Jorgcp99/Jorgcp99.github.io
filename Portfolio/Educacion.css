@@ -1,0 +1,60 @@
+body{
+		margin-bottom:0px;
+		margin:0px;
+		background-color:#e6e6e6;
+		
+	}
+	#Menu{
+		display:flex;
+		padding-top:20px;
+		margin: auto;
+		display:flex;
+		
+		background-color:white;
+		height:50px;
+		justify-content:space-around;
+		}
+	
+	#Menu  a{
+		
+		text-decoration:none;
+		font:bold 16px Verdana;
+		padding:15px;
+		border-bottom: 2px solid transparent;
+		margin-left:20px;
+		color: #274855;
+		height:20px;
+	}
+	#Menu div{
+	
+		display:flex;
+		justify-content:space-around;
+		align-items:center;
+		padding :8px;
+	}
+	#Menu  a:hover{
+		border-bottom: 2px solid #cc0000;
+		color:#cc0000;
+	}
+	
+	#educacion{
+		border:solid black 2px;
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content:space-between;
+		height:420px;
+	}
+	#izquierda{
+		border:solid green 2px;
+		width:400px;
+		height:100%;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+	}
+	#derecha{
+		border:solid yellow 2px;
+		width:400px;
+		height:100%;
+		border-top-left-radius: 50px;
+		border-bottom-left-radius: 50px;
+	}
