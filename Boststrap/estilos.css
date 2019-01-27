@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container{
+  border: solid black 2px;
+  width: 100%;
+  padding: 5%;
+}
+
+#datos{
+  text-align: center;
+  height: 20%;
+}
+#mis_skills{
+    border:solid black 2px;
+  margin-top: 10%;
+  padding: 5%;
+  text-align: center;
+}
+#mis_skills div{
+    border:solid black 2px;
+    padding: 5%;
+    margin: 3%;
+    text-align: center;
+}
+
+#exper{
+  border:solid red 2px;
+  padding:5%;
+}
+#exper div{
+  padding: 5%;
+  border: solid black 2px;
+}
+#exp{
+  border:solid black 2px;
+margin-top: 10%;
+padding: 5%;
+text-align: center;
+}
+#exp div{
+    border:solid black 2px;
+    padding: 5%;
+    margin: 3%;
+    text-align: center;
+}
+#qwerty{
+	border: solid black 2px;
+	align-items: center;
+}
+#mona{
+	border-radius: 8px;
+}
