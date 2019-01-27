@@ -1,0 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container{
+
+  width: 100%;
+  padding: 5%;
+	background: #282D33;
+}
+
+#datos{
+  text-align: center;
+  height: 20%;
+}
+#mis_skills{
+
+  margin-top: 5%;
+  padding: 5%;
+  text-align: center;
+	background: #ffffcc;
+}
+#mis_skills #izq{
+
+	background: #009999;
+}
+#mis_skills #izq div{
+
+    padding: 5%;
+		margin-top: 5%;
+    text-align: center;
+		justify-content: center;
+		background: #ffffcc;
+}
+#mis_skills #der{
+
+	padding-bottom: 5%;
+		background: #009999;
+}
+#mis_skills #der div{
+
+		margin-top: 5%;
+    text-align: center;
+		background: #ffffcc;
+}
+
+#exper{
+
+  padding:5%;
+}
+#exper div{
+  padding: 5%;
+	margin-top: 3%;
+
+}
+#exp{
+
+margin-top: 10%;
+padding: 5%;
+text-align: center;
+ background: #ffffcc;
+}
+#exp div{
+    border: solid #009999 15px;
+    padding: 5%;
+    margin: 3%;
+    text-align: center;
+}
+#qwerty{
+
+	align-items: center;
+	background: #ffffcc;
+}
+#mona{
+	border-radius: 8px;
+}
