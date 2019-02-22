@@ -1,7 +1,11 @@
+body{
+
+}
 .container{
   background: #384858;
   color: white;
   padding: 3%;
+  overflow: hidden;
 
 }
 #nombre{
@@ -39,7 +43,9 @@
 #prof_skills{
   padding: 10%;
   margin-top: 5%;
-
+}
+#img_profile{
+  margin-top: 2%;
 }
 #hola{
   padding: 5%;
@@ -100,4 +106,48 @@
 #hola2 #skillx6{
   background:-webkit-linear-gradient(left, #3fbac2 85%, #dbedf3 15%);
 
+}
+#crono{
+  border-right:solid white 2px;
+  height: 10%;
+  margin-top: 10%;
+}
+#crono2{
+  border-right: solid white 2px;
+  height: 10%;
+  margin-top: 2%;
+}
+#punto{
+  margin-left:19.5%;
+  align-items: center;
+  height: 5%;
+}
+#punto img{
+  align-items: center;
+}
+#proy1{
+  margin-top: 10%;
+}
+#cont{
+  margin-top: 15%;
+  margin-left: 7%;
+  border: solid red 2px;
+
+}
+#icono{
+  margin-top: 10%;
+  margin-left: 7%;
+  border: solid red 2px;
+  height: 13%;
+}
+#nose{
+    height: 13%;
+    margin-top: 10%;
+    text-align: center;
+    border: solid red 2px;
+}
+#nose h5{
+  margin-top: 8%;
+  text-decoration: none;
+  color:white;
 }
